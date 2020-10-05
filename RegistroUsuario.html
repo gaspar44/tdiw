@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ES">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="Este es una pagina web de Bodega de Alcohol"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles/registro.css">
+        <title>Formulario Registro</title>
+    </head>
+    <body>
+        <section class="form-register">
+            <h4>Formulario Registro</h4>
+            Nombre: 
+            <input class="controls" type="text" name="nombres" id="nombres" placeholder="Ingresar su nombre" required> 
+            <br>
+
+            Correo Electrónico: 
+            <input class="controls" type="email" name="Correo electronico" id="correo" placeholder="Ingresar su Correo electronico" required>
+            <br>
+  
+            Password: 
+            <input class="controls" type="password" name="Password" id="password" placeholder="Ingresar su password" required >
+            <br>
+
+            Dirección:
+            <input class="controls" type="text" name="direccion" id="direccion" placeholder="Ingresar su direccion" maxlength="30" required>
+            <br>
+
+            Población: 
+            <input class="controls" type="text" name="poblacion" id="poblacion" placeholder="Ingresar su poblacion" maxlength="30" required>
+            <br>
+
+            Código Postal:
+            <input class="controls" type="text" name="codigo postal" id="codigopostal" placeholder="Ingresar su codigo postal" pattern="^\d{5}$" required>
+            <br>
+
+            <p>Estoy de acuerdo con <a href="#">Termino y Condiciones</a></p>
+            <input class="botton" type="submit" value="Registrar">
+            <p><a href="#">¿Ya tengo cuenta?</a></p>
+        </section>
+    </body>
+</html>
