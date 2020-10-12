@@ -1,7 +1,7 @@
 const MENU = `<aside>
 <div id="registerButton">
-    <a href="RegistroUsuario.html">Registrarse</a>
-    <a href="InicialSesion.html">Iniciar Sesión</a>
+    <a href="/RegistroUsuario.html">Registrarse</a>
+    <a href="/InicialSesion.html">Iniciar Sesión</a>
 </div>
 </aside>
 
