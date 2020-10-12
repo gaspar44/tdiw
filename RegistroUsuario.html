@@ -19,7 +19,11 @@
             <br>
   
             Password: 
-            <input class="controls" type="password" name="Password" id="password" placeholder="Ingresar su password" required >
+            <input class="controls" pattern="(?=^.{6,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"type="password" name="Password" id="password" placeholder="Ingresar su password" required >
+            <br>
+            
+            Repit Password: 
+            <input class="controls" pattern="(?=^.{6,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"type="password" name="repitPassword" id="password" placeholder="Ingresar su password" required >
             <br>
 
             Dirección:

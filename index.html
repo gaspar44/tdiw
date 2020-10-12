@@ -1,30 +1,14 @@
 <!DOCTYPE html>
-<head>
-    <title>Bodega de alcohol</title>
-    <meta charset="UTF-8">
-    <h1>FALTA IMAGEN</h1>
-</head>
-
-<body>
-    <aside>
-        <div id="registerButton">
-            <a href="RegistroUsuario.html">Registrarse</a>
-            <a href="InicialSesion.html">Iniciar Sesión</a>
-        </div>
-    </aside>
-
-    <section>
-        <div id="productIndex">
-            <ul>
-                <li><a href="menuElements/cerveza.html">Cervezas</a></li>
-                <li><a href="menuElements/vinos.html">Vinos</a></li>
-                <li><a href="menuElements/whisky.html">Whisky</a> </li>
-                <li><a href="menuElements/ron.html">Ron</a></li>
-                <li><a href="menuElements/vodka.html">Vodka</a></li>
-                <li><a href="menuElements/cocteles.html">Cocteles</a></li>
-                <li><a href="menuElements/ginebras.html">Ginebras</a></li>
-                <li><a href="menuElements/cavas.html">Cavas</a></li>
-            </ul>
-        </div>
-    </section>
-</body>
+<html>
+    <head>
+        <title>Bodega de alcohol</title>
+        <meta charset="UTF-8">
+        <h1>FALTA IMAGEN</h1>
+        <link rel="stylesheet" href="/styles/menu.css">
+        <script src="/js/import_menu.js"></script>
+    </head>
+    
+    <body onload="return importHTML();">
+       <div id="loadMenu"></div>
+    </body>
+</html>
