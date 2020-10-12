@@ -5,7 +5,7 @@ const MENU = `<aside>
 </div>
 </aside>
 
-<section>
+<nav>
 <div id="productIndex">
     <ul class="navigationMenu">
         <li><a href="/index.html">Inicio</a></li>
@@ -19,7 +19,7 @@ const MENU = `<aside>
         <li><a href="/menuElements/cavas.html">Cavas</a></li>
     </ul>
 </div>
-</section>`
+</nav>`
 
 function importHTML() {
     var actualDocument = document.getElementById("loadMenu").innerHTML = MENU;
