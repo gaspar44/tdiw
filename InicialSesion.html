@@ -6,10 +6,10 @@
     </head>
     <body>
         <section>
-            <input type="text" name="usuario" id="usuario" placeholder="Usuario" required>
+            <input type="text" pattern="[a-zA-Z]+(\s[a-zA-Z]+)?$" name="usuario" id="usuario" placeholder="Usuario" required>
             <br>
             
-            <input type="password" name="password" id="password" placeholder="Contraseña" required>
+            <input type="password" pattern="(?=^.{6,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" name="password" id="password" placeholder="Contraseña" required>
             <br>
             
             <input type="submit" value="Entrar">
