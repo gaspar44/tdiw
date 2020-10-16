@@ -22,10 +22,33 @@ Se dispondrá de una página web que proveerá de varias bebidad alcohólicas, e
 
 ### Vinos
 1. Tinto
-    1.Sangre de Toro.
+    1. Sangre de Toro.
     1. Furvus (D.O. Monsant).
     1. Portal del Montsant, Brunus.
     
 1. Blanco
     1. Gato Negro Sauvignon Blanc.
     1. Edetària, Clos de L'Amistad.
+    1. Oporto Barros Branco Lagrima
+    
+### Whisky
+1. Malta
+    1. DYC 15 Años Single Malt.
+    
+1. Escoses.
+    1. Black Label.
+    1. Chivas Regal.
+    
+### Ron
+1. Dorado
+    1. Ron cacique 1796.
+    1. Santa Teresa.
+    1. Valdespino Rare Spirits.
+
+1. Blanco
+    1. Havana Club 3 años.
+    1. Don Papa Sherry Casks Finish.
+
+
+### Vodka
+[referencia](https://www.bodeboca.com/destilados-licores/vodka)
