@@ -49,6 +49,12 @@ Se dispondrá de una página web que proveerá de varias bebidad alcohólicas, e
     1. Havana Club 3 años.
     1. Don Papa Sherry Casks Finish.
 
+### Ginebras
+1. Aromatizada.
 
-### Vodka
+1. Gin.
+
+1. Gin Destilado.
+
+1. Lodon Gin
 [referencia](https://www.bodeboca.com/destilados-licores/vodka)

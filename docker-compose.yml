@@ -9,3 +9,26 @@ services:
 
         volumes:
         - ${TDIW_HOME}/tdiw:/var/www/html
+
+    db:
+        image: mariadb:10.1.38
+
+        environment:
+            - MYSQL_ROOT_PASSWORD=demodemo
+            - MYSQL_DATABASE=testing
+            - MYSQL_USER=tester
+            - MYSQL_PASSWORD=demodemo
+        
+
+    phpmyadmin:
+        image: phpmyadmin:latest
+
+        environment:
+            - MYSQL_ROOT_PASSWORD=demodemo
+            - MYSQL_DATABASE=testing
+            - MYSQL_USER=tester
+            - MYSQL_PASSWORD=demodemo
+            - PMA_HOST=db
+
+        ports:
+            - "8080:80"
