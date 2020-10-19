@@ -2,21 +2,25 @@ version: "3"
 
 services:
     web:
-        image: php:7.3.7-apache
+        build:
+            context: php
 
         ports:
-        - "80:80"
+            - "80:80"
 
         volumes:
-        - ${TDIW_HOME}/tdiw:/var/www/html
+            - ${TDIW_HOME}/tdiw:/var/www/html
+        
+        environment: 
+            - MYSQL_PASSWORD=demodemo
 
     db:
         image: mariadb:10.1.38
 
         environment:
             - MYSQL_ROOT_PASSWORD=demodemo
-            - MYSQL_DATABASE=testing
-            - MYSQL_USER=tester
+            - MYSQL_DATABASE=tdiwb8
+            - MYSQL_USER=tdiw-b8
             - MYSQL_PASSWORD=demodemo
         
 
@@ -25,8 +29,8 @@ services:
 
         environment:
             - MYSQL_ROOT_PASSWORD=demodemo
-            - MYSQL_DATABASE=testing
-            - MYSQL_USER=tester
+            - MYSQL_DATABASE=tdiwb8
+            - MYSQL_USER=tdiw-b8
             - MYSQL_PASSWORD=demodemo
             - PMA_HOST=db
 

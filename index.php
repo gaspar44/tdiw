@@ -10,5 +10,11 @@
     
     <body onload="return importHTML();">
        <div id="loadMenu"></div>
+
+       <?php
+       require __DIR__.'/model/connection.php';
+       $categories = getConnection();
+       echo $categories[0]['nombre'];
+       ?>
     </body>
 </html>
