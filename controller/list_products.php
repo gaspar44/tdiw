@@ -1,18 +1,19 @@
 <?php
-require_once __DIR__.'/../model/connection.php';
+require __DIR__.'/../model/connection.php';
 
 function getCategories() {
-    $prueba = getConnection();
     $stringQuery = 'SELECT * FROM categoria';
 
     try {
-        $stmnt = $prueba->query($stringQuery,PDO::FETCH_ASSOC);
+        $conn = getConnection();
+        $stmnt = $conn->query($stringQuery,\PDO::FETCH_ASSOC);
+        $stmnt = $conn->query($stringQuery,PDO::FETCH_ASSOC);
+        return $stmnt->fetchAll(PDO::FETCH_ASSOC);
     }
     catch (Exception $exp) {
+        echo $exp->getMessage();
         return null;
-    }   
-
-    return $stmnt->FecthAll(PDO::FETCH_ASSOC);
+    }
 }
 
 ?>

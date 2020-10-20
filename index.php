@@ -12,8 +12,8 @@
        <div id="loadMenu"></div>
 
        <?php
-       require __DIR__.'/model/connection.php';
-       $categories = getConnection();
+       require __DIR__.'/controller/list_products.php';
+       $categories = getCategories();
        echo $categories[0]['nombre'];
        ?>
     </body>

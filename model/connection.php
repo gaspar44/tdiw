@@ -1,6 +1,5 @@
 <?php
 
-
 function getConnection() {
     $databaseName = 'tdiwb8';
     $databaseUserName = 'tdiw-b8';
@@ -9,19 +8,10 @@ function getConnection() {
     try {
         $connection = new PDO('mysql:host='.$databaseHost.';dbname='.$databaseName.';port=3306;charset=utf8mb4',$databaseUserName,$databasePassword);
         $connection->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
-        $stringQuery = 'SELECT * FROM categoria';
-        $stmnt = $connection->query($stringQuery,\PDO::FETCH_ASSOC);
-        return $stmnt->fetchAll(PDO::FETCH_ASSOC);
+        return $connection;
 
     } catch(PDOException $e) {
-        
         echo $e->getMessage();
     }
-
-
-    
-    // return $connection;
 }
-
-
 ?>
