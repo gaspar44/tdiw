@@ -4,7 +4,7 @@
     <title>Bodega de alcohol</title>
     <meta charset="UTF-8">
     <h1>FALTA IMAGEN</h1>
-    <link rel="stylesheet" href="/styles/menu.css">
+    <link rel="stylesheet" href="/view/resources/styles/menu.css">
     <script src="/js/import_menu.js"></script>
 </head>
 
@@ -12,8 +12,9 @@
 <nav>
     <div id="productIndex">
         <ul class="navigationMenu">
-            <!--<li>
-            </li>-->
+            <li>
+                <a href="./view/IniciarSesion.html">Registro</a>
+            </li>
             <?php foreach ($categories as $category) : ?>
                 <li>
                     <a href="index.php?action=listProduct&category_id=<?php echo $category['id']?>">
