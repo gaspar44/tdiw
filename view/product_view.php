@@ -1,13 +1,18 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Bodega de alcohol</title>
-    <meta charset="UTF-8">
-    <h1>FALTA IMAGEN</h1>
     <link rel="stylesheet" href="/view/resources/styles/drinkInfo.css">
-    <!--<script src="/js/import_menu.js"></script>-->
 </head>
 <body>
+    <h2><?php echo $productsToFound[0] ?></h2>
 
+    <div id="drinks">
+        <table border="1">
+            <th> prueba</th> <th>tu más
+                <tr>
+                    <td> holis</td> <td>d</td>
+                </tr>
+        </table>
+    </div>
 </body>
 </html>

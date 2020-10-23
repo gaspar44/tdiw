@@ -1,13 +1,13 @@
 <?php
-
+require __DIR__.'/controller/Products.php';
 $http_action = $_GET["action"] ?? null;
 
 switch ($http_action) {
     case 'listProduct':
-        require __DIR__.'/controller/list_products_in_category.php';
+        $productID = $_GET["category_id"] ?? null;
+        $products->getProductsInCategory($productID);
         break;
     default :
-        require __DIR__.'/controller/list_products.php';
         break;
 }
 ?>
