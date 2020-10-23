@@ -13,7 +13,7 @@
     <div id="productIndex">
         <ul class="navigationMenu">
             <li>
-                <a href="./view/IniciarSesion.html">Registro</a>
+                <a href="./view/RegistroUsuario.html">Registro</a>
             </li>
             <?php foreach ($categories as $category) : ?>
                 <li>
@@ -25,5 +25,7 @@
         </ul>
     </div>
 </nav>
+<br>
+<br>
 </body>
 </html>
