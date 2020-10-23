@@ -1,6 +1,5 @@
 <?php
 
-
 class Connection {
 private $databaseName = 'tdiwb8';
 private $databaseUserName = 'tdiw-b8';
@@ -42,7 +41,11 @@ private $databaseConnection;
 
     public function getProductsInCategory($categoryID) {
         $stringQuery = "SELECT * FROM producto WHERE categoria_id = $categoryID";
-        return $this->doQuery($stringQuery);
+        $productsInCategory = $this->doQuery($stringQuery);
+        $typeOfCategoryQuery = "SELECT nombre FROM categoria WHERE id= $categoryID";
+        $foundedCategory = $this->doQuery($typeOfCategoryQuery);
+
+        return array($foundedCategory[0]["nombre"],$productsInCategory);
     }
 }
 ?>

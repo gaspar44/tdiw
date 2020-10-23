@@ -1,7 +1,5 @@
 <?php
 
-
-
 $http_action = $_GET["action"] ?? null;
 
 switch ($http_action) {

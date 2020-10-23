@@ -1,7 +1,8 @@
 #productIndex {
     text-align: center;
     margin: auto;
-    width: auto;
+    /*width: fit-content;*//*width: fit-content;*/
+    display: table;
 }
 
 ul {
