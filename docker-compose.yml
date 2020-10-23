@@ -15,6 +15,7 @@ services:
         environment: 
             - MYSQL_PASSWORD=demodemo
             - XDEBUG_CONFIG=192.168.1.80
+            - DATABASE_HOST=db
 
     db:
         image: mariadb:10.1.38
