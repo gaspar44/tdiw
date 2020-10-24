@@ -15,14 +15,19 @@ class Products {
 
     public function getProductsInCategory($categoryID) {
         if  ( is_null($categoryID) ) {
-            require  __DIR__.'/../view/404.php';
+            $doc = new DOMDocument();
+            $doc->parentNode->removeChild("head");
+            $doc->loadHTML(__DIR__.'../view/404.html');
+            echo $doc->saveHTML();
+
+            /*require __DIR__ . '/../view/404.html';*/
             return NULL;
         }
 
 
         $productsToFound = $this->connectionToDatabase->getProductsInCategory($categoryID);
         if ( is_null($productsToFound[0]) ) {
-            require  __DIR__.'/../view/404.php';
+            require __DIR__ . '/../view/404.html';
             return NULL;
         }
 
