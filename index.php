@@ -1,5 +1,5 @@
 <?php
-require __DIR__.'/controller/Products.php';
+require_once __DIR__.'/controller/Products.php';
 $http_action = $_GET["action"] ?? null;
 
 switch ($http_action) {

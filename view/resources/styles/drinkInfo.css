@@ -5,9 +5,18 @@ h2 {
     color: red;
 }
 
-#drinks table {
-    font-style: italic;
-    color:blueviolet;
-    border: 1px solid black;
-    border-collapse: collapse;
+.drinks {
+    display: grid;
+    font-family: "Noto Sans Arabic";
+    font-size: 10px;
+    line-height: 1;
+}
+
+.drink a img {
+    height: 200px;
+    display: inline-block;
+}
+
+.drink a img:hover {
+    height: 250px;
 }

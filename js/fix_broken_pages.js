@@ -4,10 +4,9 @@ const MENU404 = `<!DOCTYPE html>
     <title>Bodega de alcohol</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="/view/resources/styles/error.css">
-    <script src="/js/fix_broken_pages.js"></script>
 </head>
 
-<body onload="return importHTML()">
+<body>
     <div >
         <h1>ERROR 404 PAGE NOT FOUND AT THIS SERVER</h1>
         <a class="button" href="/index.php">volver</a>

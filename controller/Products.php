@@ -15,23 +15,26 @@ class Products {
 
     public function getProductsInCategory($categoryID) {
         if  ( is_null($categoryID) ) {
-            $doc = new DOMDocument();
-            $doc->parentNode->removeChild("head");
-            $doc->loadHTML(__DIR__.'../view/404.html');
-            echo $doc->saveHTML();
-
-            /*require __DIR__ . '/../view/404.html';*/
+            $this->pageNotFoundLoadHTML();
             return NULL;
         }
 
-
         $productsToFound = $this->connectionToDatabase->getProductsInCategory($categoryID);
         if ( is_null($productsToFound[0]) ) {
-            require __DIR__ . '/../view/404.html';
+            $this->pageNotFoundLoadHTML();
             return NULL;
         }
 
         require __DIR__.'/../view/product_view.php';
+    }
+
+    /*public function*/
+
+    private function pageNotFoundLoadHTML() {
+        $doc = new DOMDocument();
+        $doc->parentNode->removeChild("head");
+        $doc->loadHTML(__DIR__.'../view/404.html');
+        echo $doc->saveHTML();
     }
 }
 

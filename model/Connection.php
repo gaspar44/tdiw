@@ -39,6 +39,9 @@ private $databaseConnection;
     private function setPassword() {
         $this->databasePassword = getenv('MYSQL_PASSWORD') == FALSE ? 'RwJv1j9D' : getenv('MYSQL_PASSWORD');
     }
+    private function setHost(){
+        $this->databaseHost = getenv('DATABASE_HOST') == FALSE ? 'localhost' : getenv('DATABASE_HOST');
+    }
 
     public function getProductsInCategory($categoryID) {
         $stringQuery = "SELECT * FROM producto WHERE categoria_id = $categoryID";
@@ -49,10 +52,8 @@ private $databaseConnection;
         return array($foundedCategory[0]["nombre"],$productsInCategory);
     }
 
-    private function setHost()
-    {
-        $this->databasePassword = getenv('MYSQL_PASSWORD') == FALSE ? 'RwJv1j9D' : getenv('MYSQL_PASSWORD');
-        $this->databaseHost = getenv('DATABASE_HOST') == FALSE ? 'localhost' : getenv('DATABASE_HOST');
+    public function getProduct($productID){
+
     }
 }
 ?>
