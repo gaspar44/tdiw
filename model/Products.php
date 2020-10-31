@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/../model/Connection.php';
+require_once __DIR__ . '/Connection.php';
 
 class Products {
     private $connectionToDatabase;
@@ -10,7 +10,7 @@ class Products {
     }
 
     public function getCategories() {
-     return $this->connectionToDatabase->getCategories();
+        return $this->connectionToDatabase->getCategories();
     }
 
     public function getProductsInCategory($categoryID) {
@@ -28,19 +28,9 @@ class Products {
         require __DIR__.'/../view/product_view.php';
     }
 
-    /*public function*/
-
     private function pageNotFoundLoadHTML() {
-        $doc = new DOMDocument();
-        $doc->parentNode->removeChild("head");
-        $doc->loadHTML(__DIR__.'../view/404.html');
-        echo $doc->saveHTML();
+        require_once __DIR__. '/../view/404.html';
     }
 }
-
-$products = new Products();
-$categories = $products->getCategories();
-
-require_once __DIR__.'/../view/menu.php';
 
 ?>

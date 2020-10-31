@@ -11,10 +11,13 @@
 <body>
 <nav>
     <div id="productIndex">
+
+        <div class="userSession">
+            <a href="./view/IniciarSesion.html">Inicio</a>
+            <a href="./view/RegistroUsuario.html">Registro</a>
+        </div>
+
         <ul class="navigationMenu">
-            <li>
-                <a href="./view/RegistroUsuario.html">Registro</a>
-            </li>
             <?php foreach ($categories as $category) : ?>
                 <li>
                     <a href="index.php?action=listProduct&category_id=<?php echo $category['id']?>">
