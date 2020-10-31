@@ -19,15 +19,14 @@
                     </div>
                     Nombre: <?php echo $productToSell["nombre"]?>
                     <br>
-                    precio: <?php echo $productToSell["precio"]?>
+                    precio: <?php echo $productToSell["precio"].'€'?>
                     <br>
-                    descripción: <?php echo $productToSell["descripcion"]?>
-                    <br>
+<!--                    descripción: <?php /*echo $productToSell["descripcion"]*/?>
+                    <br>-->
                 </li>
+            </div>
                 <?php endforeach; ?>
         </ul>
-        </div>
-
     </div>
 </body>
 </html>
