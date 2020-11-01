@@ -15,16 +15,35 @@ h2 {
 .drink {
     padding: 5px;
     width: 50%;
+    float:left;
+    margin-left: 0px;
+    margin-right:0px;
 }
 
-.drinkImage a img {
-    max-width: 100%;
-    height: 200px;
-    horiz-align: left;
-    border: 1px solid black;
-    padding: 1px;
+ .drinkImage a img {
+     max-width: 100%;
+     height: 200px;
+     border: 1px solid black;
+     padding: 1px;
+     float:left;
 }
 
 .drinkImage a img:hover {
     height: 250px;
 }
+
+
+.productInfo {
+    /*text-align: justify;*/
+    font-size: 25px;
+    /*align: center;*/
+    margin: 0 auto;
+    width: 800px;
+    height: 400px;
+
+}
+.drinkImage img {
+    float:left;
+    margin-left: 10px;
+}
+

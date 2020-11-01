@@ -6,15 +6,17 @@ class Product {
     private $description;
     private $routeToPicture;
     private $categoryName;
+    private $productID;
     private $categoryID;
 
-    public function __construct($name,$price,$description,$routeToPicture,$categoryName,$categoryID)
+    public function __construct($name,$price,$description,$routeToPicture,$categoryName,$productID,$categoryID)
     {
         $this->name = $name;
         $this->price = $price;
         $this->description = $description;
         $this->routeToPicture = $routeToPicture;
         $this->categoryName = $categoryName;
+        $this->productID = $productID;
         $this->categoryID = $categoryID;
     }
 
@@ -44,10 +46,14 @@ class Product {
         return $this->categoryName;
     }
 
+    public function getCategoryID() {
+        return $this->categoryID;
+    }
+
 
     public function getID()
     {
-        return $this->categoryID;
+        return $this->productID;
     }
 }
 ?>

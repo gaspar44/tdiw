@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <h1>FALTA IMAGEN</h1>
     <link rel="stylesheet" href="/view/resources/styles/menu.css">
-    <!--<script src="/js/import_menu.js"></script>-->
 </head>
 
 <body>

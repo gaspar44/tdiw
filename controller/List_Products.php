@@ -3,7 +3,6 @@
 global $productsInCategory;
 
 if (! is_null($categoryID) ){
-    global $productsInCategory;
     $productsInCategory = $products->getProductsInCategory($categoryID);
 }
 

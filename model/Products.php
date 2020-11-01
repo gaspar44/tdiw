@@ -36,7 +36,7 @@ class Products {
         $produtsToReturn = array();
 
         foreach ($productsInCategory as $product){
-            $productToAdd = new Product($product["nombre"],$product["precio"],$product["descripcion"],$product["ruta"],$foundedCategory,$product["id"]);
+            $productToAdd = new Product($product["nombre"],$product["precio"],$product["descripcion"],$product["ruta"],$foundedCategory,$product["id"],$categoryID);
             $produtsToReturn[$productToAdd->getID()] = $productToAdd;
         }
 
@@ -47,5 +47,4 @@ class Products {
         require_once __DIR__. '/../view/404.html';
     }
 }
-
 ?>
