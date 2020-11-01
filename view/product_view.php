@@ -21,8 +21,6 @@
                     <br>
                     precio: <?php echo $productToSell->getPrice().'€'?>
                     <br>
-<!--                    descripción: <?php /*echo $productToSell["descripcion"]*/?>
-                    <br>-->
                 </li>
             </div>
                 <?php endforeach; ?>

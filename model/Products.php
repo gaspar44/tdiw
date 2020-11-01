@@ -24,7 +24,7 @@ class Products {
         $stringQuery = "SELECT * FROM producto WHERE categoria_id = $categoryID";
         $productsInCategory = $this->connectionToDatabase->doQuery($stringQuery);
 
-        if ( is_null($productsInCategory) ) {
+        if ( empty($productsInCategory) ) {
             $this->pageNotFoundLoadHTML();
             return NULL;
         }
