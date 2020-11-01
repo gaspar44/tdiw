@@ -45,7 +45,7 @@ class Product {
     }
 
 
-    public function getCategoryID()
+    public function getID()
     {
         return $this->categoryID;
     }

@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="/view/resources/styles/drinkInfo.css">
 </head>
 <body>
-    <h2><?php echo $productsInCategory[0]->getCategoryName() ?></h2>
+    <h2><?php echo $productsInCategory[1]->getCategoryName() ?></h2>
 
     <div id="drinksInCategory">
         <ul>
@@ -13,7 +13,7 @@
             <div class="drink">
                 <li>
                     <div class="drinkImage">
-                        <a href=<?php echo "/index.php?action=getProductInfo&product_id=" . $productToSell['id']?>>
+                        <a href=<?php echo "/index.php?action=getProductInfo&product_id=" . $productToSell->getID()?>>
                             <img src=<?php echo $productToSell->getRouteToPicture()?>>
                         </a>
                     </div>

@@ -1,5 +1,7 @@
 <?php
+require __DIR__ . '/controller/List_Categories.php';
 $http_action = $_GET["action"] ?? null;
+
 
 switch ($http_action) {
     case 'listProduct':
@@ -7,7 +9,7 @@ switch ($http_action) {
         require_once __DIR__ . '/controller/List_Products.php';
         break;
     default :
-        require __DIR__ . '/controller/List_Categories.php';
+/*        require __DIR__ . '/controller/List_Categories.php';*/
         break;
 }
 ?>

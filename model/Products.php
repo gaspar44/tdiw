@@ -33,16 +33,14 @@ class Products {
         $foundedCategory = $this->connectionToDatabase->doQuery($typeOfCategoryQuery);
         $foundedCategory = $foundedCategory[0]["nombre"];
 
-        $produtsToReturn = [];
+        $produtsToReturn = array();
 
         foreach ($productsInCategory as $product){
-            $productToAdd = new Product($product["nombre"],$product["precio"],$product["descripcion"],$product["ruta"],$foundedCategory,$categoryID);
-            array_push($produtsToReturn,$productToAdd);
+            $productToAdd = new Product($product["nombre"],$product["precio"],$product["descripcion"],$product["ruta"],$foundedCategory,$product["id"]);
+            $produtsToReturn[$productToAdd->getID()] = $productToAdd;
         }
 
         return $produtsToReturn;
-
-        /*require __DIR__.'/../view/product_view.php';*/
     }
 
     private function pageNotFoundLoadHTML() {
