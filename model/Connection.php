@@ -31,25 +31,11 @@ private $databaseConnection;
         }
     }
 
-
     private function setPassword() {
         $this->databasePassword = getenv('MYSQL_PASSWORD') == FALSE ? 'RwJv1j9D' : getenv('MYSQL_PASSWORD');
     }
     private function setHost(){
         $this->databaseHost = getenv('DATABASE_HOST') == FALSE ? 'localhost' : getenv('DATABASE_HOST');
-    }
-
-    public function getProductsInCategory($categoryID) {
-        $stringQuery = "SELECT * FROM producto WHERE categoria_id = $categoryID";
-        $productsInCategory = $this->doQuery($stringQuery);
-        $typeOfCategoryQuery = "SELECT nombre FROM categoria WHERE id= $categoryID";
-        $foundedCategory = $this->doQuery($typeOfCategoryQuery);
-
-        return array($foundedCategory[0]["nombre"],$productsInCategory);
-    }
-
-    public function getProduct($productID){
-
     }
 }
 ?>
