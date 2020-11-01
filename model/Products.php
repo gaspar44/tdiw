@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/Connection.php';
+require_once __DIR__ . '/Product.php';
 
 class Products {
     private $connectionToDatabase;
@@ -10,7 +11,8 @@ class Products {
     }
 
     public function getCategories() {
-        return $this->connectionToDatabase->getCategories();
+        $stringQuery = 'SELECT * FROM categoria';
+        return $this->connectionToDatabase->doQuery($stringQuery);
     }
 
     public function getProductsInCategory($categoryID) {
@@ -19,13 +21,28 @@ class Products {
             return NULL;
         }
 
-        $productsToFound = $this->connectionToDatabase->getProductsInCategory($categoryID);
-        if ( is_null($productsToFound[0]) ) {
+        $stringQuery = "SELECT * FROM producto WHERE categoria_id = $categoryID";
+        $productsInCategory = $this->connectionToDatabase->doQuery($stringQuery);
+
+        if ( is_null($productsInCategory) ) {
             $this->pageNotFoundLoadHTML();
             return NULL;
         }
 
-        require __DIR__.'/../view/product_view.php';
+        $typeOfCategoryQuery = "SELECT nombre FROM categoria WHERE id= $categoryID";
+        $foundedCategory = $this->connectionToDatabase->doQuery($typeOfCategoryQuery);
+        $foundedCategory = $foundedCategory[0]["nombre"];
+
+        $produtsToReturn = [];
+
+        foreach ($productsInCategory as $product){
+            $productToAdd = new Product($product["nombre"],$product["precio"],$product["descripcion"],$product["ruta"],$foundedCategory,$categoryID);
+            array_push($produtsToReturn,$productToAdd);
+        }
+
+        return $produtsToReturn;
+
+        /*require __DIR__.'/../view/product_view.php';*/
     }
 
     private function pageNotFoundLoadHTML() {

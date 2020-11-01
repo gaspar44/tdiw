@@ -2,8 +2,11 @@
 require_once __DIR__ . '/../model/Products.php';
 
 $products = new Products();
-$categories = $products->getCategories();
+print_r($productID);
+$productsInCategory = $products->getProductsInCategory($productID);
 
-require_once __DIR__.'/../view/menu.php';
+if (!is_null($productsInCategory)) {
+    require_once __DIR__ . '/../view/product_view.php';
+}
 
 ?>

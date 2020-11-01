@@ -4,22 +4,22 @@
     <link rel="stylesheet" href="/view/resources/styles/drinkInfo.css">
 </head>
 <body>
-    <h2><?php echo $productsToFound[0] ?></h2>
+    <h2><?php echo $productsInCategory[0]->getCategoryName() ?></h2>
 
     <div id="drinksInCategory">
         <ul>
-            <?php foreach ($productsToFound[1] as $productToSell) : ?>
+            <?php foreach ($productsInCategory as $productToSell) : ?>
 
             <div class="drink">
                 <li>
                     <div class="drinkImage">
                         <a href=<?php echo "/index.php?action=getProductInfo&product_id=" . $productToSell['id']?>>
-                            <img src=<?php echo $productToSell["ruta"]?>>
+                            <img src=<?php echo $productToSell->getRouteToPicture()?>>
                         </a>
                     </div>
-                    Nombre: <?php echo $productToSell["nombre"]?>
+                    Nombre: <?php echo $productToSell->getName()?>
                     <br>
-                    precio: <?php echo $productToSell["precio"].'€'?>
+                    precio: <?php echo $productToSell->getPrice().'€'?>
                     <br>
 <!--                    descripción: <?php /*echo $productToSell["descripcion"]*/?>
                     <br>-->

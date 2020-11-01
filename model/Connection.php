@@ -19,7 +19,7 @@ private $databaseConnection;
         }
     }
 
-    private function doQuery($stringQuery) {
+    public function doQuery($stringQuery) {
         try  {
             $stmnt = $this->databaseConnection->query($stringQuery, PDO::FETCH_ASSOC);
             $stmnt = $this->databaseConnection->query($stringQuery, PDO::FETCH_ASSOC);
@@ -31,10 +31,6 @@ private $databaseConnection;
         }
     }
 
-    public function getCategories() {
-        $stringQuery = 'SELECT * FROM categoria';
-        return $this->doQuery($stringQuery);
-    }
 
     private function setPassword() {
         $this->databasePassword = getenv('MYSQL_PASSWORD') == FALSE ? 'RwJv1j9D' : getenv('MYSQL_PASSWORD');
