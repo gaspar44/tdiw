@@ -22,7 +22,6 @@ private $databaseConnection;
     public function doQuery($stringQuery) {
         try  {
             $stmnt = $this->databaseConnection->query($stringQuery, PDO::FETCH_ASSOC);
-            $stmnt = $this->databaseConnection->query($stringQuery, PDO::FETCH_ASSOC);
             return $stmnt->fetchAll(PDO::FETCH_ASSOC);
         }
         catch (Exception $exp) {

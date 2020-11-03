@@ -1,6 +1,8 @@
 <!doctype html>
 <html lang="en">
 <head>
+    <title>Bodega de alcohol</title>
+    <meta charset="UTF-8">
     <link rel="stylesheet" href="/view/resources/styles/drinkInfo.css">
 </head>
 <body>
