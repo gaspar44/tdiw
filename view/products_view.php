@@ -4,6 +4,9 @@
     <title>Bodega de alcohol</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="/view/resources/styles/drinkInfo.css">
+    <script src="/js/jquery-3.5.1.js"></script>
+    <script src="/js/functions.js"></script>
+
 </head>
 <body>
     <h2><?php echo $productsInCategory[1]->getCategoryName() ?></h2>
@@ -15,7 +18,7 @@
             <div class="drink">
                 <li>
                     <div class="drinkImage">
-                        <a href=<?php echo "/index.php?action=getProductInfo&product_id=" . $productToSell->getID()."&category_id=".$productToSell->getCategoryID()?>>
+                        <a value=<?php echo "/index.php?action=getProductInfo&product_id=" . $productToSell->getID()."&category_id=".$productToSell->getCategoryID()?>>
                             <img src=<?php echo $productToSell->getRouteToPicture()?>>
                         </a>
                     </div>

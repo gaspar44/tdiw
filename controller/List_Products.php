@@ -7,7 +7,7 @@ if (! is_null($categoryID) ){
 }
 
 if (! empty($productsInCategory) ) {
-    require_once __DIR__ . '/../view/product_view.php';
+    require_once __DIR__ . '/../view/products_view.php';
 }
 
 ?>
