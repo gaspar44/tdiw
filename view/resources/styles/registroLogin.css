@@ -1,0 +1,74 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.form-register{
+    width: 90%;
+    padding: 30px;
+    margin: auto;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    border-radius: 4px;
+    font-family: 'calibri';
+}
+.form-register h4{
+    font-size: 30px;
+    margin-bottom: 20px;
+    
+}
+.ainiciarsesion{
+    float: right;
+}
+.controls{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 16px;
+    border-radius: 4px;
+    border: 1px solid #9fbdff;
+    font-family: 'calibri';
+    font-size: 18px;
+}
+.form-register p{
+    height: 40px;
+    text-align: center;
+    font-size: 18px;
+}
+.form-register a{
+    color: black;
+    text-decoration: none;
+}
+.form-register a:hover{
+    color: blue;
+    text-decoration: underline;
+}
+
+.form-register .botons{
+    width: 150px;
+    background-color: #9fbdff;
+    padding: 10px;
+    margin: 16px 0;
+    margin-left: 8px;
+    font-size: 16px;
+    float: right;
+}
+.form-register .botons:hover{
+    color:white;
+    background-color: #8baefa;
+}
+
+
+.form-register .buttonIniciarSesion{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 16px;
+    border-radius: 4px;
+    border: 1px solid #9fbdff;
+    font-family: 'calibri';
+    font-size: 18px;
+}
+.form-register .buttonIniciarSesion:hover{
+    color:white;
+    background-color: #8baefa;
+}

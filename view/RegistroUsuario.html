@@ -4,43 +4,45 @@
         <meta charset="UTF-8">
         <meta name="description" content="Este es una pagina web de Bodega de Alcohol"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="/view/resources/styles/registro.css">
+        <link rel="stylesheet" href="resources/styles/registroLogin.css">
         <title>Formulario Registro</title>
     </head>
     <body>
         <section class="form-register">
+            <p class="ainiciarsesion"><a href="IniciarSesion.html">¿Ya tengo cuenta?</a></p>
             <h4>Formulario Registro</h4>
-            Nombre: 
-            <input class="controls" pattern="[a-zA-Z\u00C0-\u00FF]+(\s[a-zA-Z\u00C0-\u00FF]+)?$" type="text" name="nombres" id="nombres" placeholder="Ingresar su nombre" required> 
-            <br>
 
-            Correo Electrónico: 
-            <input class="controls" type="email" name="Correo electronico" id="correo" placeholder="Ingresar su Correo electronico" required>
+            Nombre: 
+            <input class="controls" type="text" name="nombres" id="nombres" pattern="[a-zA-Z\u00C0-\u00FF]+(\s[a-zA-Z\u00C0-\u00FF]+)?$" required>
             <br>
-  
-            Password: 
-            <input class="controls" pattern="(?=^.{6,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" type="password" name="Password" id="password" placeholder="Ingresar su password" required >
+            
+            Correo Electrónico: 
+            <input class="controls" type="email" name="Correo electronico" id="correo" required>
+            <br>
+            
+            Password:
+            <input class="controls" type="password" name="Password" id="password" pattern="(?=^.{6,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required >
             <br>
             
             Repit Password: 
-            <input class="controls" pattern="(?=^.{6,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" type="password" name="repitPassword" id="password" placeholder="Ingresar su password" required >
+            <input class="controls" type="password" name="repitPassword" id="password" pattern="(?=^.{6,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"  required >
             <br>
 
             Dirección:
-            <input class="controls" type="text" name="direccion" id="direccion" placeholder="Ingresar su direccion" maxlength="30" required>
+            <input class="controls" type="text" name="direccion" id="direccion" maxlength="30" required>
             <br>
-
+            
             Población: 
-            <input class="controls" type="text" name="poblacion" id="poblacion" placeholder="Ingresar su poblacion" maxlength="30" required>
+            <input class="controls" type="text" name="poblacion" id="poblacion" maxlength="30" required>
             <br>
-
+            
             Código Postal:
-            <input class="controls" type="text" name="codigo postal" id="codigopostal" placeholder="Ingresar su codigo postal" pattern="^\d{5}$" required>
+            <input class="controls" type="text" name="codigo postal" id="codigopostal" pattern="^\d{5}$" maxlength="5" required>
             <br>
 
             <p>Estoy de acuerdo con <a href="#">Termino y Condiciones</a></p>
-            <input class="botton" type="submit" value="Registrar">
-            <p><a href="#">¿Ya tengo cuenta?</a></p>
+            <input class="botons" type="submit" value="Registrar"><input class="botons" type="reset" value="Borrar">
+            
         </section>
     </body>
 </html>

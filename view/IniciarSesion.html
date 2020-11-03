@@ -1,23 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html lang="ES">
     <head>
         <meta charset="UTF-8">
         <title>Iniciar sesión</title>
+        <link rel="stylesheet" href="resources/styles/registroLogin.css">
     </head>
     <body>
-        <section>
-            <input type="email" name="usuario" id="usuario" placeholder="dirección de correo" required>
-            <br>
+        <section class="form-register">
+            <h4>Iniciar sesión</h4>
             
-            <input type="password" pattern="(?=^.{6,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" name="password" id="password" placeholder="Contraseña" required>
-            <br>
-            
-            <input type="submit" value="Entrar">
-            <br>
-            
-            <a href="#">¿Has olvidado la Contraseña?</a> 
-            <br>
-            <a href="RegistroUsuario.html"><input type="button" value="Crear cuenta nueva"></a>
+            <input  class="controls" type="text" name="usuario" id="usuario" placeholder="Usuario" required>
+
+            <input  class="controls" type="password" name="password" id="password" placeholder="Contraseña" pattern="(?=^.{6,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required>
+
+            <input  class="buttonIniciarSesion" type="submit" value="Entrar">
+
+            <a href="#">¿Has olvidado la Contraseña?</a> <br>
+            <a href="RegistroUsuario.html">¡No tengo cuenta!</a>
         </section>
     </body>
 </html>
