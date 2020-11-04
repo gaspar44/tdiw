@@ -1,8 +1,9 @@
 <?php
 
-global $productsInCategory;
+require_once __DIR__ . '/../model/Products.php';
 
 if (! is_null($categoryID) ){
+    $products = new Products();
     $productsInCategory = $products->getProductsInCategory($categoryID);
 }
 

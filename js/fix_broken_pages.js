@@ -7,10 +7,7 @@ const MENU404 = `<!DOCTYPE html>
 </head>
 
 <body>
-    <div id="error">
-        <h1>ERROR 404 PAGE NOT FOUND AT THIS SERVER</h1>
-        <a class="button" href="/index.php">volver</a>
-    </div>
+    
 </body>
 </html>`
 

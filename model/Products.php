@@ -2,7 +2,8 @@
 require_once __DIR__ . '/Connection.php';
 require_once __DIR__ . '/Product.php';
 
-class Products {
+class Products
+{
     private $connectionToDatabase;
 
     public function __construct()
@@ -10,13 +11,15 @@ class Products {
         $this->connectionToDatabase = new Connection();
     }
 
-    public function getCategories() {
+    public function getCategories()
+    {
         $stringQuery = 'SELECT * FROM categoria';
         return $this->connectionToDatabase->doQuery($stringQuery);
     }
 
-    public function getProductsInCategory($categoryID) {
-        if  ( is_null($categoryID) ) {
+    public function getProductsInCategory($categoryID)
+    {
+        if (is_null($categoryID)) {
             $this->pageNotFoundLoadHTML();
             return NULL;
         }
@@ -24,7 +27,7 @@ class Products {
         $stringQuery = "SELECT * FROM producto WHERE categoria_id = $categoryID";
         $productsInCategory = $this->connectionToDatabase->doQuery($stringQuery);
 
-        if ( empty($productsInCategory) ) {
+        if (empty($productsInCategory)) {
             $this->pageNotFoundLoadHTML();
             return NULL;
         }
@@ -35,16 +38,17 @@ class Products {
 
         $produtsToReturn = array();
 
-        foreach ($productsInCategory as $product){
-            $productToAdd = new Product($product["nombre"],$product["precio"],$product["descripcion"],$product["ruta"],$foundedCategory,$product["id"],$categoryID);
+        foreach ($productsInCategory as $product) {
+            $productToAdd = new Product($product["nombre"], $product["precio"], $product["descripcion"], $product["ruta"], $foundedCategory, $product["id"], $categoryID);
             $produtsToReturn[$productToAdd->getID()] = $productToAdd;
         }
-
         return $produtsToReturn;
     }
 
-    private function pageNotFoundLoadHTML() {
-        require_once __DIR__. '/../view/404.html';
+    private function pageNotFoundLoadHTML()
+    {
+        require_once __DIR__ . '/../view/404.html';
     }
 }
+
 ?>

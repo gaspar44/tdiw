@@ -1,37 +1,24 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <title>Bodega de alcohol</title>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="/view/resources/styles/drinkInfo.css">
-    <script src="/js/jquery-3.5.1.js"></script>
-    <script src="/js/functions.js"></script>
+<h2><?php echo $productsInCategory[1]->getCategoryName() ?></h2>
 
-</head>
-<body>
-    <h2><?php echo $productsInCategory[1]->getCategoryName() ?></h2>
-
-    <div id="drinksInCategory">
-        <ul>
-            <?php foreach ($productsInCategory as $productToSell) : ?>
+<div id="drinksInCategory">
+    <ul>
+        <?php foreach ($productsInCategory as $productToSell) : ?>
 
             <div class="drink">
                 <li>
                     <div class="drinkImage">
-                        <a value=<?php echo "/index.php?action=getProductInfo&product_id=" . $productToSell->getID()."&category_id=".$productToSell->getCategoryID()?>>
-                            <img src=<?php echo $productToSell->getRouteToPicture()?>>
+                        <a value=<?php echo "/index.php?action=getProductInfo&product_id=" . $productToSell->getID() . "&category_id=" . $productToSell->getCategoryID() ?>>
+                            <img src=<?php echo $productToSell->getRouteToPicture() ?>>
                         </a>
                     </div>
                     <div class="productInfo">
-                        Nombre: <?php echo $productToSell->getName()?>
+                        Nombre: <?php echo $productToSell->getName() ?>
                         <br>
-                        precio: <?php echo $productToSell->getPrice().'€'?>
+                        precio: <?php echo $productToSell->getPrice() . '€' ?>
                         <br>
                     </div>
                 </li>
             </div>
-                <?php endforeach; ?>
-        </ul>
-    </div>
-</body>
-</html>
+        <?php endforeach; ?>
+    </ul>
+</div>
