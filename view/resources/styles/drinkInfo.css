@@ -24,7 +24,7 @@ h2 {
      max-width: 100%;
      height: 200px;
      border: 1px solid black;
-     padding: 1px;
+     padding: 0 0 0 10px;
      float:left;
 }
 
@@ -42,8 +42,9 @@ h2 {
     height: 400px;
 
 }
-.drinkImage img {
+/*.drinkImage img {
     float:left;
     margin-left: 10px;
-}
+
+}*/
 

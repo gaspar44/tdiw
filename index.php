@@ -2,7 +2,9 @@
 
 
 $http_action = $_GET["action"] ?? null;
-if (!$_GET['async']) {
+$isAsync = $_GET["async"] ?? null;
+
+if (!$isAsync) {
     require_once __DIR__ . '/controller/List_Categories.php';
 }
 switch ($http_action) {
