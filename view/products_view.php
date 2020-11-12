@@ -7,7 +7,8 @@
             <div class="drink">
                 <li>
                     <div class="drinkImage">
-                        <a value=<?php echo "/index.php?action=getProductInfo&product_id=" . $productToSell->getID() . "&category_id=" . $productToSell->getCategoryID() ?>>
+                        <a class="category_nav" data-httpMethod=GET
+                           data-value="async=true&action=getProductInfo&product_id=<?php echo$productToSell->getID()?>&category_id=<?php echo $productToSell->getCategoryID() ?>">
                             <img src=<?php echo $productToSell->getRouteToPicture() ?>>
                         </a>
                     </div>

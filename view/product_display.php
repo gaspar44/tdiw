@@ -12,7 +12,6 @@
         <div class="drinkImage">
             <img src=<?php echo $productToDisplay->getRouteToPicture()?>>
         </div>
-        <div class="button">Agregar al carrito</div>
         <div class="productInfo">
             <br>
             Nombre: <?php echo $productToDisplay->getName()?>
@@ -23,6 +22,7 @@
             <br>
         </div>
     </div>
+    <div class="button">Agregar al carrito</div>
 
 </body>
 </html>
