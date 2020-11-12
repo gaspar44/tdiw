@@ -1,15 +1,11 @@
-$(document).ready(function () {
-    $("#password, #newPassword").keyup(checkPassword);
-});
-
-function checkPassword() {
-    var password = $("#password").val();
-    var newPassword = $("#newPassword").val();
+function checkPassword(form) {
+    let password = form.password.value;
+    let newPassword = form.newPassword.value;
 
     if (password != newPassword){
-        console.log("Hola");
+        alert("Incorrect Password");
+        return false;
     }
-    else {
-        console.log("Adios");
-    }
+
+    return true;
 }

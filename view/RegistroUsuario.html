@@ -14,7 +14,7 @@
             <p class="ainiciarsesion"><a href="IniciarSesion.html">¿Ya tengo cuenta?</a></p>
             <h4>Formulario Registro</h4>
 
-            <form onsubmit="return validatePassword()" method="post">
+            <form action="/controller/Register_User.php" onsubmit="return checkPassword(this)" method="post">
                 Nombre:
                 <input class="controls" type="text" name="nombres" id="nombres" pattern="[a-zA-Z\u00C0-\u00FF]+(\s[a-zA-Z\u00C0-\u00FF]+)?$" required>
                 <br>
@@ -24,11 +24,11 @@
                 <br>
 
                 Password:
-                <input class="controls" type="password" name="Password" id="password" pattern="(?=^.{6,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required >
+                <input class="controls" type="password" name="password" id="password" pattern="(?=^.{6,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required >
                 <br>
 
-                Repit Password:
-                <input class="controls" type="password" name="repitPassword" id="newPassword" pattern="(?=^.{6,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"  required >
+                New Password:
+                <input class="controls" type="password" name="newPassword" id="newPassword" pattern="(?=^.{6,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"  required >
                 <br>
 
                 Dirección:
