@@ -1,7 +1,6 @@
 <?php
 require_once __DIR__. "/../model/User.php";
 
-print_r($_POST);
 $userName = $_POST["mail"];
 $address = $_POST["direccion"];
 $poblation = $_POST["poblacion"];
@@ -16,7 +15,16 @@ if ($exists) {
     require_once __DIR__.'/../view/userExists.html';
     return;
 }
+else {
+    $isOk = $user->registerUser();
 
-$isOk = $user->registerUser();
+    if ($isOk) {
+        require_once __DIR__. '/../view/userCreateSuccess.html';
+        return;
+    }
 
+    else {
+        require_once  __DIR__. '/../view/userCreateError.html';
+    }
+}
 ?>

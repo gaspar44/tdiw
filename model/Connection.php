@@ -22,9 +22,14 @@ private $databaseConnection;
     public function doQuery($stringQuery, $parameters) {
         try  {
             $stmnt = $this->databaseConnection->prepare($stringQuery);
-
             $stmnt->execute($parameters);
-            return $stmnt->fetchAll(PDO::FETCH_ASSOC);
+
+            if ( !(strpos($stringQuery,'UPDATE') !== false) && !(strpos($stringQuery,'INSERT') !== false) ){
+                return $stmnt->fetchAll(PDO::FETCH_ASSOC);
+            }
+
+            return $stmnt;
+
         }
 
         catch (Exception $exp) {

@@ -22,9 +22,17 @@ class User {
     }
 
     public function registerUser() {
-        $sqlQuery = "INSERT INTO usuario (nombre,mail,password,direccion,poblacion,cp) 
-VALUES ($this->userRealNames,$this->userName,$this->password,$this->address,$this->poblation,$this->postalCode);";
-        return true;
+        $sqlQuery = 'INSERT INTO usuario (nombre,mail,password,direccion,poblacion,cp) VALUES (:realName,:userName,:password,:address,:poblation,:postalCode);';
+        $parameters = [
+            'realName' => $this->userRealNames,
+            'userName' => $this->userName,
+            'password' => $this->password,
+            'address' => $this->address,
+            'poblation' => $this->poblation,
+            'postalCode' => $this->postalCode
+        ];
+
+        return empty( ! $this->connection->doQuery($sqlQuery,$parameters) );
     }
 
     public function getUser($userName){
@@ -32,9 +40,9 @@ VALUES ($this->userRealNames,$this->userName,$this->password,$this->address,$thi
     }
 
     public function exists(){
-        $nameToLookUp = ':userName';
-        $sqlQuery = 'SELECT * FROM usuario where nombre='.$nameToLookUp;
-        $existsOrNo = $this->connection->doQuery($sqlQuery,$nameToLookUp,$this->userName);
+        $nameToLookUp = 'userName';
+        $sqlQuery = 'SELECT * FROM usuario where mail=:'.$nameToLookUp;
+        $existsOrNo = $this->connection->doQuery($sqlQuery,[$nameToLookUp => $this->userName]);
 
         return !empty($existsOrNo);
     }
