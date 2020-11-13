@@ -15,16 +15,13 @@ if ($exists) {
     require_once __DIR__.'/../view/userExists.html';
     return;
 }
-else {
-    $isOk = $user->registerUser();
 
-    if ($isOk) {
-        require_once __DIR__. '/../view/userCreateSuccess.html';
-        return;
-    }
+$isOk = $user->registerUser();
 
-    else {
-        require_once  __DIR__. '/../view/userCreateError.html';
-    }
+if ($isOk) {
+    require_once __DIR__. '/../view/userCreateSuccess.html';
+    return;
 }
+
+require_once  __DIR__. '/../view/userCreateError.html';
 ?>
