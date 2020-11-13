@@ -19,16 +19,11 @@ private $databaseConnection;
         }
     }
 
-    public function doQuery($stringQuery, $parameterToLookUp, $parameters) {
+    public function doQuery($stringQuery, $parameters) {
         try  {
             $stmnt = $this->databaseConnection->prepare($stringQuery);
-            $ok = $stmnt->bindValue($parameterToLookUp,$parameters);
 
-            if (!$ok) {
-                return null;
-            }
-
-            $stmnt->execute();
+            $stmnt->execute($parameters);
             return $stmnt->fetchAll(PDO::FETCH_ASSOC);
         }
 
