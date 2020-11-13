@@ -19,14 +19,19 @@ private $databaseConnection;
         }
     }
 
-    public function doQuery($stringQuery,$parameterToLookUp,$parameter) {
+    public function doQuery($stringQuery, $parameterToLookUp, $parameters) {
         try  {
             $stmnt = $this->databaseConnection->prepare($stringQuery);
-            $stmnt->bindValue($parameterToLookUp,$parameter);
+            $ok = $stmnt->bindValue($parameterToLookUp,$parameters);
+
+            if (!$ok) {
+                return null;
+            }
+
             $stmnt->execute();
-            //$stmnt = $this->databaseConnection->query($stringQuery, PDO::FETCH_ASSOC);
             return $stmnt->fetchAll(PDO::FETCH_ASSOC);
         }
+
         catch (Exception $exp) {
             echo $exp->getMessage();
             return null;
@@ -42,6 +47,7 @@ private $databaseConnection;
     private function setPassword() {
         $this->databasePassword = getenv('MYSQL_PASSWORD') == FALSE ? 'RwJv1j9D' : getenv('MYSQL_PASSWORD');
     }
+
     private function setHost(){
         $this->databaseHost = getenv('DATABASE_HOST') == FALSE ? 'localhost' : getenv('DATABASE_HOST');
     }

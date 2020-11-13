@@ -23,7 +23,7 @@ class Products
             return NULL;
         }
 
-        $categoryToLookUp = ":category_id";
+        $categoryToLookUp = ':category_id';
 
         $stringQuery = "SELECT * FROM producto WHERE categoria_id =".$categoryToLookUp;
         $productsInCategory = $this->connectionToDatabase->doQuery($stringQuery,$categoryToLookUp,$categoryID);
@@ -33,7 +33,7 @@ class Products
             return NULL;
         }
 
-        $typeOfCategoryToLookUp= ":id";
+        $typeOfCategoryToLookUp= ':id';
         $typeOfCategoryQuery = "SELECT nombre FROM categoria WHERE id=".$typeOfCategoryToLookUp;
         $foundedCategory = $this->connectionToDatabase->doQuery($typeOfCategoryQuery,$typeOfCategoryToLookUp,$categoryID);
         $foundedCategory = $foundedCategory[0]["nombre"];
