@@ -13,8 +13,7 @@ class Products
 
     public function getCategories()
     {
-        $stringQuery = 'SELECT * FROM categoria';
-        return $this->connectionToDatabase->doQuery($stringQuery);
+        return $this->connectionToDatabase->getCategories();
     }
 
     public function getProductsInCategory($categoryID)
@@ -24,16 +23,19 @@ class Products
             return NULL;
         }
 
-        $stringQuery = "SELECT * FROM producto WHERE categoria_id = $categoryID";
-        $productsInCategory = $this->connectionToDatabase->doQuery($stringQuery);
+        $categoryToLookUp = ":category_id";
+
+        $stringQuery = "SELECT * FROM producto WHERE categoria_id =".$categoryToLookUp;
+        $productsInCategory = $this->connectionToDatabase->doQuery($stringQuery,$categoryToLookUp,$categoryID);
 
         if (empty($productsInCategory)) {
             $this->pageNotFoundLoadHTML();
             return NULL;
         }
 
-        $typeOfCategoryQuery = "SELECT nombre FROM categoria WHERE id= $categoryID";
-        $foundedCategory = $this->connectionToDatabase->doQuery($typeOfCategoryQuery);
+        $typeOfCategoryToLookUp= ":id";
+        $typeOfCategoryQuery = "SELECT nombre FROM categoria WHERE id=".$typeOfCategoryToLookUp;
+        $foundedCategory = $this->connectionToDatabase->doQuery($typeOfCategoryQuery,$typeOfCategoryToLookUp,$categoryID);
         $foundedCategory = $foundedCategory[0]["nombre"];
 
         $produtsToReturn = array();

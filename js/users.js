@@ -3,7 +3,7 @@ function checkPassword(form) {
     let newPassword = form.newPassword.value;
 
     if (password != newPassword){
-        alert("Incorrect Password");
+        alert("Las contraseñas no coinciden");
         return false;
     }
 

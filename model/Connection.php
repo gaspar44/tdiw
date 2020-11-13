@@ -19,15 +19,24 @@ private $databaseConnection;
         }
     }
 
-    public function doQuery($stringQuery) {
+    public function doQuery($stringQuery,$parameterToLookUp,$parameter) {
         try  {
-            $stmnt = $this->databaseConnection->query($stringQuery, PDO::FETCH_ASSOC);
+            $stmnt = $this->databaseConnection->prepare($stringQuery);
+            $stmnt->bindValue($parameterToLookUp,$parameter);
+            $stmnt->execute();
+            //$stmnt = $this->databaseConnection->query($stringQuery, PDO::FETCH_ASSOC);
             return $stmnt->fetchAll(PDO::FETCH_ASSOC);
         }
         catch (Exception $exp) {
             echo $exp->getMessage();
             return null;
         }
+    }
+
+    public function getCategories() {
+        $stringQuery = "SELECT * FROM categoria";
+        $stmnt =$this->databaseConnection->query($stringQuery, PDO::FETCH_ASSOC);
+        return $stmnt->fetchAll(PDO::FETCH_ASSOC);
     }
 
     private function setPassword() {
