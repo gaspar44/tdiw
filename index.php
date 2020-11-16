@@ -16,6 +16,12 @@ switch ($http_action) {
         $productID = $_GET["product_id"] ?? null;
         require_once __DIR__ . '/controller/Products_Info.php';
         break;
+    case 'login':
+        require_once __DIR__ . '/controller/iniciarSesion.php';
+        break;
+    case 'userRegister':
+        require_once __DIR__ . '/controller/RegistroUsuario.php';
+        break;
     default :
         break;
 }

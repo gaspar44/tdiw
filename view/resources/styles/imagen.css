@@ -1,0 +1,27 @@
+.categories a img{
+    width: 200px;
+    height: 100px;
+}
+
+.products a img{
+    width: auto;
+    height: 300px;
+}
+
+.logo img{
+    width: auto;
+    height: 50px;
+}
+
+.categoria {
+    overflow: hidden;
+}
+
+.categoria a img {
+    transition: all 0.25s;
+}
+
+.categoria a img:hover{
+    transform: scale(1.2);
+}
+
