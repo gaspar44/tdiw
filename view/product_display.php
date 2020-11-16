@@ -8,21 +8,22 @@
 
 </head>
 <body>
+<div>
+    <div class="button_detail_add_cart">Agregar al carrito</div>
     <div class="product">
         <div class="drinkImage">
-            <img src=<?php echo $productToDisplay->getRouteToPicture()?>>
+            <img src=<?php echo $productToDisplay->getRouteToPicture() ?>>
         </div>
         <div class="productInfo">
             <br>
-            Nombre: <?php echo $productToDisplay->getName()?>
+            Nombre: <?php echo $productToDisplay->getName() ?>
             <br>
-            Precio: <?php echo $productToDisplay->getPrice()?>
+            Precio: <?php echo $productToDisplay->getPrice() ?>
             <br>
-            Descripción: <?php echo $productToDisplay->getDescription()?>
+            Descripción: <?php echo $productToDisplay->getDescription() ?>
             <br>
         </div>
     </div>
-    <div class="button">Agregar al carrito</div>
 
 </body>
 </html>
