@@ -1,4 +1,4 @@
-<h2><?php echo $productsInCategory[1]->getCategoryName() ?></h2>
+<h2><?php echo $productsInCategory[array_key_first($productsInCategory)]->getCategoryName() ?></h2>
 
 <div id="drinksInCategory">
     <ul>
