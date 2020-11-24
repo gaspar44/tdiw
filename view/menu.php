@@ -3,6 +3,6 @@
         <img src="/view/resources/pictures/logo.png"></img>
     </div>
     <div class="userSession">
-        <a href="/view/IniciarSesion.html">Inicio</a><a href="view/RegistroUsuario.html">Registro</a>
+        <a href="/index.php?async=false&action=login">Login</a><a href="/index.php?async=false&action=userRegister">Registro</a>
     </div>
 </div>

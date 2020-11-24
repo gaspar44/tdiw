@@ -1,5 +1,6 @@
 <?php
 
+session_start();
 
 $http_action = $_GET["action"] ?? null;
 $isAsync = $_GET["async"] ?? null;
@@ -7,6 +8,7 @@ $isAsync = $_GET["async"] ?? null;
 if (!$isAsync) {
     require_once __DIR__ . '/controller/List_Categories.php';
 }
+
 switch ($http_action) {
     case 'listProduct':
         $categoryID = $_GET["category_id"] ?? null;
@@ -17,10 +19,10 @@ switch ($http_action) {
         require_once __DIR__ . '/controller/Products_Info.php';
         break;
     case 'login':
-        require_once __DIR__ . '/controller/iniciarSesion.php';
+        require_once __DIR__ . '/controller/Login.php';
         break;
     case 'userRegister':
-        require_once __DIR__ . '/controller/RegistroUsuario.php';
+        require_once __DIR__ . '/controller/Register.php';
         break;
     default :
         break;
