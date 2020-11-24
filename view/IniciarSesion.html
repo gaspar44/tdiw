@@ -8,15 +8,16 @@
     <body>
         <section class="form-register">
             <h4>Iniciar sesión</h4>
-            
-            <input  class="controls" type="text" name="usuario" id="usuario" placeholder="Usuario" required>
+            <form target="_self" action="/controller/Login_User.php" method="post">
+                <input  class="controls" type="text" name="usuario" id="usuario" placeholder="Usuario" required>
 
-            <input  class="controls" type="password" name="password" id="password" placeholder="Contraseña" pattern="(?=^.{6,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required>
+                <input  class="controls" type="password" name="password" id="password" placeholder="Contraseña" pattern="(?=^.{6,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required>
 
-            <input  class="buttonIniciarSesion" type="submit" value="Entrar">
+                <input  class="buttonIniciarSesion" type="submit" value="Entrar">
 
-            <a href="#">¿Has olvidado la Contraseña?</a> <br>
-            <a href="RegistroUsuario.html">¡No tengo cuenta!</a>
+                <a href="#">¿Has olvidado la Contraseña?</a> <br>
+                <a href="RegistroUsuario.html">¡No tengo cuenta!</a>
+            </form>
         </section>
     </body>
 </html>
