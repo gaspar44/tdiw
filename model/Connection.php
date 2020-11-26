@@ -29,7 +29,6 @@ private $databaseConnection;
             }
 
             return $stmnt;
-
         }
 
         catch (Exception $exp) {

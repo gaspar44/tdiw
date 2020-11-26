@@ -8,14 +8,22 @@ $userName = $_POST["usuario"] ?? null;
 
 if (!is_null($userName)) {
     $userName = filter_var($userName,FILTER_VALIDATE_EMAIL);
-    $userName = htmlentities($userName,ENT_QUOTES | ENT_HTML5,'UTF-8');
 }
 
 $password = $_POST["password"];
 
-$userFactory = new UserFactory();
+$factory = new UserFactory();
+$user = $factory->getUserByName($userName,$password);
 
-$userToLog = $userFactory->getUserByName($userName,$password);
+if (!$user->exists()) {
+    require_once __DIR__ . '../view/userCreateError.html';
+}
 
-$userToLog->getUser();
+$user =$user->getUser();
+
+if (is_null($user)) {
+    require_once __DIR__ .'/../view/userCreateError.html';
+}
+print_r($user->getUserRealNames());
+
 ?>
