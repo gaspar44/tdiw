@@ -13,17 +13,26 @@ if (!is_null($userName)) {
 $password = $_POST["password"];
 
 $factory = new UserFactory();
-$user = $factory->getUserByName($userName,$password);
+$user = $factory->getUserByLoginIt($userName,$password);
 
 if (!$user->exists()) {
-    require_once __DIR__ . '../view/userCreateError.html';
+    require_once __DIR__ . '/../view/userCreateError.html';
+    return;
 }
 
 $user =$user->getUser();
 
 if (is_null($user)) {
     require_once __DIR__ .'/../view/userCreateError.html';
+    return;
 }
-print_r($user->getUserRealNames());
+
+$_SESSION["userID"] = $user->getId();
+$_SESSION["userName"] = $user->getUserRealNames();
+
+print_r($_SESSION);
+
+require_once __DIR__ .'/../index.php';
+
 
 ?>

@@ -7,7 +7,6 @@ $(document).ready(function () {
             type: httpMethod,
             data: dataToUse,
             success: function (html) {
-                // document.write(html);
                 if(html['error']){
                     $('body').html(html);
                 }else{

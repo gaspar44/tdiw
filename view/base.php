@@ -13,7 +13,7 @@
     <script src="/js/users.js"></script>
 </head>
 
-<body onload="checkIfUserIsLogged()">
+<body>
 <?php
 include 'menu.php';
 include 'menu_categories.php';
