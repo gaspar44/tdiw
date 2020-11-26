@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__. "/../model/User.php";
+require_once __DIR__. "/../model/User_Factory.php";
 
 $userName = $_POST["mail"];
 $address = $_POST["direccion"];
@@ -8,7 +8,8 @@ $postalCode = $_POST["codigo_postal"];
 $userRealNames = $_POST["nombres"];
 $password = $_POST["password"];
 
-$user = new User($userName,$password,$address,$poblation,$postalCode,$userRealNames);
+$factory = new UserFactory();
+$user = $factory->getUser($userName,$password,$address,$poblation,$postalCode,$userRealNames);
 $exists = $user->exists();
 
 if ($exists) {
