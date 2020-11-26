@@ -10,11 +10,10 @@
     <link rel="stylesheet" href="/view/resources/styles/imagen.css">
     <script src="/js/jquery-3.5.1.js"></script>
     <script src="/js/functions.js"></script>
+    <script src="/js/users.js"></script>
 </head>
 
-<body>
-
-
+<body onload="checkIfUserIsLogged()">
 <?php
 include 'menu.php';
 include 'menu_categories.php';

@@ -9,3 +9,10 @@ function checkPassword(form) {
 
     return true;
 }
+
+function checkIfUserIsLogged() {
+    var cookie = document.cookie;
+    if (cookie.includes("userName")) {
+        document.getElementById("userSesion").innerHTML = `<p>er Huevo </p>` + cookie;
+    }
+}
