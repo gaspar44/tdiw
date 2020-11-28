@@ -24,6 +24,13 @@ switch ($http_get_action) {
     case 'userRegister':
         require_once __DIR__ . '/controller/Register.php';
         break;
+    case 'logout':
+        if (isset($_SESSION["sessionID"])) {
+            unset($_SESSION["sessionID"]);
+            unset($_SESSION["realName"]);
+            header("Location: index.php");
+            exit();
+        }
     default :
         break;
 }

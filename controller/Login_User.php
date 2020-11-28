@@ -1,4 +1,16 @@
 <?php
+function sessionStart($user) {
+    session_start();
+
+    $sessionID = md5(uniqid(rand(),true));
+    $_SESSION["sessionID"] = $sessionID;
+    $_SESSION["realName"] = $user->getUserRealNames();
+
+    setcookie("realName",$user->getUserRealNames(),time() + 3600,"/");
+    session_regenerate_id(true);
+    header("Location: ../index.php");
+}
+
 if ($_SERVER["REQUEST_METHOD"] != "POST") {
     return;
 }
@@ -27,14 +39,7 @@ if (is_null($user)) {
     return;
 }
 
-session_start();
-$sessionID = md5(uniqid(rand(),true));
-$_SESSION["sessionID"] = $sessionID;
-$_SESSION["realName"] = $user->getUserRealNames();
-
-setcookie("realName",$user->getUserRealNames(),time() + 3600,"/");
-session_regenerate_id(true);
-header("Location: ../index.php");
+sessionStart($user);
 exit();
 
 ?>
