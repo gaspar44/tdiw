@@ -25,12 +25,8 @@ switch ($http_get_action) {
         require_once __DIR__ . '/controller/Register.php';
         break;
     case 'logout':
-        if (isset($_SESSION["sessionID"])) {
-            unset($_SESSION["sessionID"]);
-            unset($_SESSION["realName"]);
-            header("Location: index.php");
-            exit();
-        }
+            require_once __DIR__ . '/controller/Logout_User.php';
+            break;
     default :
         break;
 }

@@ -41,5 +41,4 @@ if (is_null($user)) {
 
 sessionStart($user);
 exit();
-
 ?>
