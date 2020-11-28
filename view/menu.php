@@ -4,7 +4,7 @@
     </div>
 
     <div id="userSesion" class="userSession">
-        <?php if (is_null($_SESSION["sessionID"])) : ?>
+        <?php if (!isset($_SESSION["sessionID"])) : ?>
             <a href="/index.php?async=false&action=login">Login</a><a href="/index.php?async=false&action=userRegister">Registro</a>
 
         <?php else :?>
