@@ -27,12 +27,14 @@ if (is_null($user)) {
     return;
 }
 
-$_SESSION["userID"] = $user->getId();
-$_SESSION["userName"] = $user->getUserRealNames();
+session_start();
+$sessionID = md5(uniqid(rand(),true));
+$_SESSION["sessionID"] = $sessionID;
+$_SESSION["realName"] = $user->getUserRealNames();
 
-print_r($_SESSION);
-
-require_once __DIR__ .'/../index.php';
-
+setcookie("realName",$user->getUserRealNames(),time() + 3600,"/");
+session_regenerate_id(true);
+header("Location: ../index.php");
+exit();
 
 ?>
