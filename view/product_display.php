@@ -24,6 +24,8 @@
             <br>
         </div>
     </div>
+    <div id="productCode" poin="false"><?php echo $productToDisplay->getCategoryID()?></div>
+    <div id="categoryID"><?php echo $productToDisplay->getID() ?></div>
 
 </body>
 </html>

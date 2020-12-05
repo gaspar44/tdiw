@@ -27,6 +27,8 @@ switch ($http_get_action) {
     case 'logout':
             require_once __DIR__ . '/controller/Logout_User.php';
             break;
+    case 'buyCar':
+        require_once __DIR__ . '/view/shopping_user_car.php';
     default :
         break;
 }
