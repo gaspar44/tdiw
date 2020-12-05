@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__. "/../model/User_Factory.php";
+require_once __DIR__ . "/../model/Message.php";
 
 $userName = $_POST["mail"];
 $address = $_POST["direccion"];
@@ -13,16 +14,20 @@ $user = $factory->getUser($userName,$password,$address,$poblation,$postalCode,$u
 $exists = $user->exists();
 
 if ($exists) {
-    require_once __DIR__.'/../view/userExists.html';
+    $message = new Message("El usuario ya existe","Ya existe");
+    require_once __DIR__.'/../view/userMessage.php';
     return;
 }
 
 $isOk = $user->registerUser();
 
 if ($isOk) {
-    require_once __DIR__. '/../view/userCreateSuccess.html';
+    $message = new Message("Usuario creado con éxito","SUCCESS");
+    require_once __DIR__ . '/../view/userMessage.php';
     return;
 }
 
-require_once  __DIR__. '/../view/userCreateError.html';
+$message = new Message("Hubo error","ERROR");
+
+require_once __DIR__ . '/../view/userMessage.php';
 ?>

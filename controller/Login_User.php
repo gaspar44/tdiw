@@ -16,10 +16,15 @@ if ($_SERVER["REQUEST_METHOD"] != "POST") {
 }
 
 require_once __DIR__ . '/../model/User_Factory.php';
+require_once  __DIR__ . '/../model/Message.php';
 $userName = $_POST["usuario"] ?? null;
+$title = "ERROR";
 
 if (!is_null($userName)) {
     $userName = filter_var($userName,FILTER_VALIDATE_EMAIL);
+    if ($userName == false){
+        return;
+    }
 }
 
 $password = $_POST["password"];
@@ -28,14 +33,18 @@ $factory = new UserFactory();
 $user = $factory->getUserByLoginIt($userName,$password);
 
 if (!$user->exists()) {
-    require_once __DIR__ . '/../view/userCreateError.html';
+    $content = "Error in user or password";
+    $message = new Message($content,$title);
+    require_once __DIR__ . '/../view/userMessage.php';
     return;
 }
 
-$user =$user->getUser();
+$user = $user->getUser();
 
 if (is_null($user)) {
-    require_once __DIR__ .'/../view/userCreateError.html';
+    $content = "Error in user or password";
+    $message = new Message($content,$title);
+    require_once __DIR__ . '/../view/userMessage.php';
     return;
 }
 

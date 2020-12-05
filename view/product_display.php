@@ -9,7 +9,7 @@
 </head>
 <body>
 <div>
-    <div class="button_detail_add_cart">Agregar al carrito</div>
+    <div class="button_detail_add_cart"><input type='button' value='Agregar al carrito'></div>
     <div class="product">
         <div class="drinkImage">
             <img src=<?php echo $productToDisplay->getRouteToPicture() ?>>

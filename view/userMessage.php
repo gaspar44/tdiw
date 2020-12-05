@@ -2,11 +2,11 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>ERROR</title>
+    <title><?php echo $message->getTitle()?></title>
 </head>
 <body>
 <div class="success" id="createSuccess">
-    <p>Hubo algún error al tratar de crear el usuario</p>
+    <p><?php echo $message->getContents()?></p>
 </div>
 </body>
 </html>
