@@ -5,11 +5,12 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="/view/resources/styles/drinkInfo.css">
     <link rel="stylesheet" href="/view/resources/styles/commonButtons.css">
+    <script src="/js/functions.js"></script>
 
 </head>
 <body>
 <div>
-    <div class="button_detail_add_cart"><input type='button' value='Agregar al carrito'></div>
+    <div class="button_detail_add_cart" data-value="async=true&action=updateShoppingCar" data-httpMethod=POST><input type='button' value='Agregar al carrito'></div>
     <div class="product">
         <div class="drinkImage">
             <img src=<?php echo $productToDisplay->getRouteToPicture() ?>>
@@ -24,8 +25,5 @@
             <br>
         </div>
     </div>
-    <div id="productCode" poin="false"><?php echo $productToDisplay->getCategoryID()?></div>
-    <div id="categoryID"><?php echo $productToDisplay->getID() ?></div>
-
 </body>
 </html>

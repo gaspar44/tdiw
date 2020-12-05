@@ -9,6 +9,7 @@ class User {
     private $postalCode;
     private $userRealNames;
     private $id;
+    private $buyingCar;
 
     public function __construct($userName,$password,$address,$poblation,$postalCode,$userRealNames,$enablePasswordHash)
     {
@@ -21,6 +22,7 @@ class User {
         $this->postalCode = $postalCode;
         $this->userRealNames = $userRealNames;
         $this->id = null;
+        $this->buyingCar = array();
     }
 
     public function registerUser() {

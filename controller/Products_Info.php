@@ -19,6 +19,10 @@ if (is_null($productToDisplay)) {
     return;
 }
 
+if (isset($_SESSION["realName"])) {
+    $_SESSION["actualProduct"] = serialize($productToDisplay);
+}
+
 require_once __DIR__ . '/../view/product_display.php';
 ?>
 

@@ -19,4 +19,21 @@ $(document).ready(function () {
             }
         })
     });
+
+    $(document).on('click', '.button_detail_add_cart', function () {
+        let dataToUse = $(this).data('value');
+        console.log('Hi, Renzo!')
+        $.ajax({
+            url: "index.php",
+            type: "POST",
+            data: dataToUse,
+            success: function (html) {
+                console.log("producto agregado");
+                $('#content').html(html);
+            },
+            error: function() {
+                window.location.replace("/index.php?action=login&async=false");
+            }
+        })
+    });
 });

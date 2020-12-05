@@ -33,6 +33,6 @@
     </tr>
     </tbody>
 </table>
-<p><?php print_r($_SESSION)?></p>
+<p><?php print_r($_COOKIE)?></p>
 </body>
 </html>
