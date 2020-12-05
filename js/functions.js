@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    $(document).on('click', '.category_nav', function () {
+    $(document).on('click', '.category_nav', function (e) {
         let dataToUse = $(this).data('value'), httpMethod = $(this).data("httpMethod");
         console.log('Hi, Renzo!')
         $.ajax({
@@ -18,9 +18,11 @@ $(document).ready(function () {
                 alert(err.Message);
             }
         })
+        e.stopImmediatePropagation();
+        return false;
     });
 
-    $(document).on('click', '.button_detail_add_cart', function () {
+    $(document).one('click',".button_detail_add_cart",function (e) {
         let dataToUse = $(this).data('value');
         console.log('Hi, Renzo!')
         $.ajax({
@@ -28,12 +30,13 @@ $(document).ready(function () {
             type: "POST",
             data: dataToUse,
             success: function (html) {
-                console.log("producto agregado");
-                $('#content').html(html);
+                alert("producto agregado");
             },
             error: function() {
                 window.location.replace("/index.php?action=login&async=false");
             }
         })
+        e.stopImmediatePropagation();
+        return false;
     });
 });

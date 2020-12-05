@@ -10,8 +10,7 @@ function sessionStart($user) {
     $_SESSION["sessionID"] = $sessionID;
     $_SESSION["realName"] = $user->getUserRealNames();
     $_SESSION["userID"] = $user->getId();
-    $_SESSION
-    $_SESSION["shoppingCar"] = array();
+    $_SESSION["shoppingCar"] = serialize(array());
 
     setcookie("realName",$user->getUserRealNames(),time() + 3600,"/");
     setcookie("sessionID",$sessionID,time() + 3600,"/");
