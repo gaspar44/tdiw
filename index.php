@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
             require_once __DIR__ . '/controller/Logout_User.php';
             break;
         case 'buyCar':
-            require_once __DIR__ . '/view/shopping_user_car.php';
+            require_once __DIR__ . '/controller/Shopping_Car_Generator.php';
             break;
         default :
             break;

@@ -11,5 +11,4 @@
             <a href="/index.php?async=false&action=buyCar"><?php echo $_SESSION["realName"]?></a><a href="/index.php?async=false&action=logout">Desconectarse</a>
         <?php endif; ?>
     </div>
-    <?php print_r(count(unserialize($_SESSION["shoppingCar"]) )) ?>
 </div>

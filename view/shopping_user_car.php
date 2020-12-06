@@ -8,31 +8,30 @@
     <title>Carrito de compra</title>
 </head>
 <body>
-<table>
+<table class="shoppingCar">
     <thead>
     <tr>
         <th> Producto </th>
-        <th> Precio/Unidad</th>
-        <th> Cantidad </th>
-        <th> Importe total </th>
+        <th> Precio </th>
+        <th> Unidad</th>
     </tr>
     </thead>
     <tbody>
+    <?php foreach ($actualBuyingCar as $product) : ?>
     <tr>
-        <td> FALTA CODI PHP nom product </td>
-        <td> precio</td>
-        <td> cantidad</td>
-        <td> importe total </td>
+        <td> <?php echo $product->getName()?></td>
+        <td> <?php echo $product->getPrice() ?></td>
+        <td> 1 </td>
     </tr>
+    <?php endforeach; ?>
 
     <tr>
-        <td colspan="3" align="right"> Total: </td>
+        <td colspan="2" align="right"> Total: </td>
     </tr>
     <tr>
         <td colspan="2" align="center">  <input type="button" value="Limpiar"></input>  </td>
     </tr>
     </tbody>
 </table>
-<p><?php print_r($_COOKIE)?></p>
 </body>
 </html>
