@@ -17,7 +17,7 @@
     </tr>
     </thead>
     <tbody>
-    <?php foreach ($actualBuyingCar as $product) : ?>
+    <?php foreach ($actualBuyingCar->getProducts() as $product) : ?>
     <tr>
         <td> <?php echo $product->getName()?></td>
         <td> <?php echo $product->getPrice() ?></td>
@@ -26,7 +26,7 @@
     <?php endforeach; ?>
 
     <tr>
-        <td colspan="2" align="right"> Total: </td>
+        <td colspan="2" align="right"> Total:<?php echo $actualBuyingCar->getTotal(); ?> </td>
     </tr>
     <tr>
         <td colspan="2" align="center">  <input type="button" value="Limpiar"></input>  </td>

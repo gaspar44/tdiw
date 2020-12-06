@@ -2,6 +2,7 @@
 
 require_once __DIR__ . '/../model/User_Factory.php';
 require_once  __DIR__ . '/../model/Message.php';
+require_once __DIR__ . '/../model/Shopping_Car.php';
 
 function sessionStart($user) {
     session_start();
@@ -10,7 +11,7 @@ function sessionStart($user) {
     $_SESSION["sessionID"] = $sessionID;
     $_SESSION["realName"] = $user->getUserRealNames();
     $_SESSION["userID"] = $user->getId();
-    $_SESSION["shoppingCar"] = serialize(array());
+    $_SESSION["shoppingCar"] = serialize(new ShoppingCar());
 
     setcookie("realName",$user->getUserRealNames(),time() + 3600,"/");
     setcookie("sessionID",$sessionID,time() + 3600,"/");
