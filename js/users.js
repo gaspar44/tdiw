@@ -8,3 +8,13 @@ function checkPassword(form) {
     }
     return true;
 }
+
+function emptyBuyingCar() {
+    let  getUrl = window.location
+    let baseUrl = getUrl .protocol+ "//" + getUrl.host + "/"  +getUrl.pathname.split('/')[1];
+    var httpRequest = new XMLHttpRequest();
+
+    httpRequest.open("GET",baseUrl + "?async=false&action=emptyBuyingCar"),false;
+    httpRequest.send(null);
+    location.reload();
+}

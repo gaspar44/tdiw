@@ -5,6 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="/js/users.js"></script>
     <title>Carrito de compra</title>
 </head>
 <body>
@@ -29,7 +30,7 @@
         <td colspan="2" align="right"> Total:<?php echo $actualBuyingCar->getTotal(); ?> </td>
     </tr>
     <tr>
-        <td colspan="2" align="center">  <input type="button" value="Limpiar"></input>  </td>
+        <td colspan="2" align="center">  <input type="button" onclick="emptyBuyingCar()" value="Limpiar">  </td>
     </tr>
     </tbody>
 </table>

@@ -30,6 +30,8 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
         case 'buyCar':
             require_once __DIR__ . '/controller/Shopping_Car_Generator.php';
             break;
+        case 'emptyBuyingCar':
+            require_once __DIR__ . '/controller/Empty.php';
         default :
             break;
     }
