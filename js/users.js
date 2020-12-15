@@ -9,12 +9,33 @@ function checkPassword(form) {
     return true;
 }
 
-function emptyBuyingCar() {
-    let  getUrl = window.location
-    let baseUrl = getUrl .protocol+ "//" + getUrl.host + "/"  +getUrl.pathname.split('/')[1];
+function getUrl() {
+    let  ServerUrl = window.location
+    return ServerUrl .protocol + "//" + ServerUrl.host + "/"  +ServerUrl.pathname.split('/')[1];
+}
+
+function makeHttpRequest(url,httpMethod) {
+    console.log(url);
     var httpRequest = new XMLHttpRequest();
 
-    httpRequest.open("GET",baseUrl + "?async=false&action=emptyBuyingCar"),false;
+    httpRequest.open(httpMethod,url,false);
     httpRequest.send(null);
+    console.log(httpRequest.responseText);
     location.reload();
+}
+
+function emptyBuyingCar() {
+    let baseUrl = getUrl();
+    const URL_ACTION = "?async=false&action=emptyBuyingCar";
+    const HTTP_METHOD = "GET"
+
+    makeHttpRequest(baseUrl + URL_ACTION,HTTP_METHOD);
+}
+
+function finishShopping() {
+    let baseUrl = getUrl();
+    const URL_ACTION = "?async=false&action=finishShopping";
+    const HTTP_METHOD = "GET";
+
+    makeHttpRequest(baseUrl + URL_ACTION,HTTP_METHOD);
 }

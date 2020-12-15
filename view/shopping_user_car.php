@@ -9,7 +9,7 @@
     <title>Carrito de compra</title>
 </head>
 <body>
-<table class="shoppingCar">
+<table class="shoppingCar" border="solid black">
     <thead>
     <tr>
         <th> Producto </th>
@@ -27,12 +27,15 @@
     <?php endforeach; ?>
 
     <tr>
-        <td colspan="2" align="right"> Total:<?php echo $actualBuyingCar->getTotal(); ?> </td>
-    </tr>
-    <tr>
-        <td colspan="2" align="center">  <input type="button" onclick="emptyBuyingCar()" value="Limpiar">  </td>
+        <td colspan="1" align="left"> Total </td>
+        <td  align="right"> <?php echo $actualBuyingCar->getTotal(); ?> </td>
+        <td  align="right"> <?php echo $actualBuyingCar->getNumberOfProucts(); ?> </td>
     </tr>
     </tbody>
+
+    <input type="button" onclick="emptyBuyingCar()" value="Limpiar">
+    <input type="button" onclick="finishShopping()" value="Comprar">
+    <?php print_r($_SESSION["DEBUG"]) ;?>
 </table>
 </body>
 </html>

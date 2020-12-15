@@ -32,6 +32,9 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
             break;
         case 'emptyBuyingCar':
             require_once __DIR__ . '/controller/Empty.php';
+        case 'finishShopping':
+            require_once __DIR__ . '/controller/Shopping_Finisher.php';
+            break;
         default :
             break;
     }
@@ -41,7 +44,6 @@ elseif ($_SERVER["REQUEST_METHOD"] == "POST") {
     $http_post_action = $_POST["action"] ?? null;
 
     if (!is_null($http_post_action)) {
-
         switch ($http_post_action) {
             case 'updateShoppingCar':
                 require_once __DIR__ . '/controller/Shopping_Updater.php';

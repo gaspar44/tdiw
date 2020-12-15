@@ -20,7 +20,8 @@ function sessionStart($user) {
 }
 
 if ($_SERVER["REQUEST_METHOD"] != "POST") {
-    return;
+    http_response_code(405);
+    exit;
 }
 
 $userName = $_POST["usuario"] ?? null;

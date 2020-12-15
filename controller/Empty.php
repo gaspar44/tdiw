@@ -4,4 +4,9 @@ if (isset($_SESSION["sessionID"]) && $_SESSION["realName"] && $_COOKIE["sessionI
     $_SESSION["shoppingCar"] = serialize(new ShoppingCar());
 }
 
+else {
+    http_response_code(401);
+    exit;
+}
+
 ?>
