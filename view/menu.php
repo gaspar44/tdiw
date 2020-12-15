@@ -8,7 +8,19 @@
             <a href="/index.php?async=false&action=login">Login</a><a href="/index.php?async=false&action=userRegister">Registro</a>
 
         <?php else :?>
-            <a href="/index.php?async=false&action=buyCar"><?php echo $_SESSION["realName"]?></a><a href="/index.php?async=false&action=logout">Desconectarse</a>
+            <?php echo $_SESSION["realName"] ?>
+            <ul>
+                <li>
+                    <a href="/index.php?async=false&action=buyCar">Comprar</a>
+                </li>
+                <li>
+                    <a href="/index.php?async=false&action=editProfile">Editar perfil</a>
+                </li>
+                <li>
+                    <a href="/index.php?async=false&action=logout">Desconectarse</a>
+                </li>
+            </ul>
+
         <?php endif; ?>
     </div>
 </div>
