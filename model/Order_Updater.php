@@ -14,7 +14,7 @@ class OrderUpdater {
     }
 
     public function createComanda() {
-        if ($this->shoppingCar->getNumberOfProucts() )
+        if ($this->shoppingCar->getNumberOfProucts() == 0)
             return false;
 
         $actualTime = date("Y-m-d H:i:s");
