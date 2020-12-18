@@ -35,7 +35,13 @@
 
     <input type="button" onclick="emptyBuyingCar()" value="Limpiar">
     <input type="button" onclick="finishShopping()" value="Comprar">
-    <?php print_r($_SESSION["DEBUG"]) ;?>
+
+    <div id="shoppingDone">
+        <?php if (isset($_SESSION["shoppingDone"])) : ?>
+            <p>¡Compra hecha con éxito!</p>
+            <?php unset($_SESSION["shoppingDone"]) ?>
+        <?php endif; ?>
+    </div>
 </table>
 </body>
 </html>

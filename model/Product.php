@@ -40,7 +40,6 @@ class Product {
         return $this->routeToPicture;
     }
 
-
     public function getCategoryName()
     {
         return $this->categoryName;
