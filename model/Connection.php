@@ -25,11 +25,9 @@ private $databaseConnection;
             $stmnt->execute($parameters);
 
             if ( !(strpos($stringQuery,'UPDATE') !== false) && !(strpos($stringQuery,'INSERT') !== false) ){
-                $_SESSION["DEBUG"] = $stmnt->fetchAll(PDO::FETCH_ASSOC);
                 return $stmnt->fetchAll(PDO::FETCH_ASSOC);
             }
 
-            $_SESSION["DEBUG"] = $stmnt->fetchAll(PDO::FETCH_ASSOC);
             return $stmnt;
         }
 

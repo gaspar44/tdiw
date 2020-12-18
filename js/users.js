@@ -21,7 +21,8 @@ function makeHttpRequest(url,httpMethod) {
     httpRequest.open(httpMethod,url,false);
     httpRequest.send(null);
     console.log(httpRequest.responseText);
-    location.reload();
+
+    httpRequest.status !== 200 ? this.body = httpRequest.responseText: location.reload();
 }
 
 function emptyBuyingCar() {
