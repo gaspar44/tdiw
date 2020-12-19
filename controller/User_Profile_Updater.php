@@ -51,7 +51,7 @@ if (!empty($password)) {
     $user->setPassword($password);
     $ok = $user->updatePassword();
 
-    if (!ok) {
+    if (!$ok) {
         $message = new Message("Error actualizando al usuario","ERROR");
         require_once __DIR__.'/../view/userMessage.php';
         return;
