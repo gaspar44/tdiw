@@ -1,5 +1,7 @@
 <?php
-session_start();
+if(!isset($_SESSION)) {
+    session_start();
+}
 
 if (!isset($_SESSION["shoppingCar"])) {
     http_response_code(401);
