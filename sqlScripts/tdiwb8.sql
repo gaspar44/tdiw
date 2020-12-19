@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: db
--- Generation Time: Dec 05, 2020 at 09:30 PM
+-- Generation Time: Dec 19, 2020 at 08:47 PM
 -- Server version: 10.1.38-MariaDB-1~bionic
 -- PHP Version: 7.4.11
 
@@ -54,7 +54,7 @@ INSERT INTO `categoria` (`id`, `nombre`, `ruta`) VALUES
 CREATE TABLE `comanda` (
   `id` int(11) NOT NULL,
   `usuario_id` int(11) NOT NULL,
-  `data` date NOT NULL,
+  `data` datetime NOT NULL,
   `nElementos` int(11) NOT NULL,
   `total` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -116,15 +116,17 @@ CREATE TABLE `usuario` (
   `password` varchar(255) NOT NULL,
   `direccion` varchar(50) DEFAULT NULL,
   `poblacion` varchar(20) NOT NULL,
-  `cp` int(10) NOT NULL
+  `cp` int(10) NOT NULL,
+  `Picture` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `usuario`
 --
 
-INSERT INTO `usuario` (`id`, `nombre`, `mail`, `password`, `direccion`, `poblacion`, `cp`) VALUES
-(2, 'Gaspar Hermán', 'gaspar.herman95@gmail.com', '$2y$10$.wbIEt76jhDXIyBkDP6.v.DHora5.9OEPU/Lr9ALswMVmKap0E4Gu', '123', 'Sant Cugat', 8912);
+INSERT INTO `usuario` (`id`, `nombre`, `mail`, `password`, `direccion`, `poblacion`, `cp`, `Picture`) VALUES
+(2, 'Gaspar Hermán', 'gaspar.herman95@gmail.com', '$2y$10$.wbIEt76jhDXIyBkDP6.v.DHora5.9OEPU/Lr9ALswMVmKap0E4Gu', '123', 'Sant Cugat', 8912, 'NULL'),
+(4, 'er Huevo', 'erHuevoEnmascarado@gmail.com', '$2y$10$x1vw8NlypwQoZeUJQw4EteAsSsvjCSTecRB.eYo2mhiPkRMheoory', '123', 'Sant Cugat', 8290, 'view/resources/userImages/4_miseria.jpg');
 
 --
 -- Indexes for dumped tables
@@ -196,7 +198,7 @@ ALTER TABLE `producto`
 -- AUTO_INCREMENT for table `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Constraints for dumped tables
