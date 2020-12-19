@@ -75,6 +75,22 @@ class User {
         return !empty($existsOrNo);
     }
 
+    public function updateWithoutPassword()
+    {
+        $parameters = [
+            'realName' => $this->userRealNames,
+            'userName' => $this->userName,
+            'address' => $this->address,
+            'poblation' => $this->poblation,
+            'postalCode' => $this->postalCode,
+            'userID' => $this->id
+        ];
+
+        $sqlQuery = 'UPDATE usuario SET nombre=:realName,mail=:userName,poblacion=:poblation,direccion=:address,cp=:postalCode WHERE id=:userID';
+        $this->connection->doQuery($sqlQuery,$parameters);
+
+    }
+
 
     /**
      * @return mixed
@@ -187,5 +203,6 @@ class User {
     {
         return $this->routeToPicture;
     }
+
 }
 ?>

@@ -8,5 +8,9 @@ class UserFactory {
     public static function getUserByLoginIt($userName, $password) {
         return new User($userName,$password,null,null,null,null,false);
     }
+
+    public static function getUserForUpdate($userName,$address,$poblation,$postalCode,$userRealNames){
+        return new User($userName,null,$address,$poblation,$postalCode,$userRealNames,true);
+    }
 }
 ?>
