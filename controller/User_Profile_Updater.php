@@ -24,7 +24,7 @@ if (isset($_FILES) && ($_FILES["profile_image"]["size"]) != 0){
     $success = $helper->saveFileToDiskAndDatabase($srcFile,$destFile);
 
     if (!$success){
-        $message = new Message("Error creando al usuario","ERROR");
+        $message = new Message("Error actualizando al usuario","ERROR");
         require_once __DIR__.'/../view/userMessage.php';
         return;
     }
@@ -32,7 +32,7 @@ if (isset($_FILES) && ($_FILES["profile_image"]["size"]) != 0){
    $_SESSION["routeToPicture"] = $helper->getNewPictureName();
 }
 
-$userName = $_SESSION["realName"];
+$userName = $_SESSION["userName"];
 $address = $_POST["direccion"];
 $poblation = $_POST["poblacion"];
 $postalCode = $_POST["codigo_postal"];
@@ -47,4 +47,17 @@ $user->updateWithoutPassword();
 
 updateUserSessionData($user);
 
+if (!empty($password)) {
+    $user->setPassword($password);
+    $ok = $user->updatePassword();
+
+    if (!ok) {
+        $message = new Message("Error actualizando al usuario","ERROR");
+        require_once __DIR__.'/../view/userMessage.php';
+        return;
+    }
+}
+
+$message = new Message("Usuario actualizado con éxito","SUCCESS");
+require_once __DIR__.'/../view/userMessage.php';
 ?>

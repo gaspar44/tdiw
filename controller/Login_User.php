@@ -12,6 +12,7 @@ function sessionStart($user) {
     $_SESSION["sessionID"] = $sessionID;
     $_SESSION["userID"] = $user->getId();
     $_SESSION["realName"] = $user->getUserRealNames();
+    $_SESSION["userName"] = $user->getUserName();
     $_SESSION["userCP"] = $user->getPostalCode();
     $_SESSION["userPoblation"] = $user->getPoblation();
     $_SESSION["userAddress"] = $user->getAddress();

@@ -91,6 +91,17 @@ class User {
 
     }
 
+    public function updatePassword()
+    {
+        $parameters = [
+            'userID' => $this->id,
+            'password' => $this->password
+        ];
+
+        $sqlQuery= 'UPDATE usuario SET password=:password WHERE id=:userID';
+
+        return empty ( ! $this->connection->doQuery($sqlQuery,$parameters) );
+    }
 
     /**
      * @return mixed
@@ -203,6 +214,5 @@ class User {
     {
         return $this->routeToPicture;
     }
-
 }
 ?>
