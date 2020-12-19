@@ -2,14 +2,15 @@
 require_once __DIR__. '/Connection.php';
 class User {
     private $connection;
+    private $id;
     private $userName;
+    private $userRealNames;
+    private $postalCode;
     private $password;
     private $address;
     private $poblation;
-    private $postalCode;
-    private $userRealNames;
-    private $id;
-    private $buyingCar;
+    private $routeToPicture;
+
 
     public function __construct($userName,$password,$address,$poblation,$postalCode,$userRealNames,$enablePasswordHash)
     {
@@ -22,7 +23,7 @@ class User {
         $this->postalCode = $postalCode;
         $this->userRealNames = $userRealNames;
         $this->id = null;
-        $this->buyingCar = array();
+        $this->routeToPicture = null;
     }
 
     public function registerUser() {
@@ -47,6 +48,7 @@ class User {
         $this->postalCode = $stmnt["cp"];
         $this->userRealNames = $stmnt["nombre"];
         $this->id = $stmnt["id"];
+        $this->routeToPicture = $stmnt["Picture"];
     }
 
     public function getUser(){
@@ -168,6 +170,14 @@ class User {
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getRouteToPicture()
+    {
+        return $this->routeToPicture;
     }
 }
 ?>

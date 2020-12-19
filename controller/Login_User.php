@@ -8,9 +8,14 @@ function sessionStart($user) {
     session_start();
 
     $sessionID = md5(uniqid(rand(),true));
+
     $_SESSION["sessionID"] = $sessionID;
-    $_SESSION["realName"] = $user->getUserRealNames();
     $_SESSION["userID"] = $user->getId();
+    $_SESSION["realName"] = $user->getUserRealNames();
+    $_SESSION["userCP"] = $user->getPostalCode();
+    $_SESSION["userPoblation"] = $user->getPoblation();
+    $_SESSION["userAddress"] = $user->getAddress();
+    $_SESSION["routeToPicture"] = $user->getRouteToPicture();
     $_SESSION["shoppingCar"] = serialize(new ShoppingCar());
 
     setcookie("realName",$user->getUserRealNames(),time() + 3600,"/");

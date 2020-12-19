@@ -2,8 +2,14 @@
 
 if (isset($_SESSION["sessionID"]) && $_SESSION["realName"]) {
     unset($_SESSION["sessionID"]);
+
     unset($_SESSION["realName"]);
     unset($_SESSION["actualProduct"]);
+    unset($_SESSION["userID"]);
+    unset($_SESSION["userCP"] );
+    unset($_SESSION["userPoblation"]);
+    unset($_SESSION["userAddress"] );
+    unset( $_SESSION["shoppingCar"]);
 
     unset($_COOKIE["PHPSESSID"]);
     unset($_COOKIE["realName"]);
