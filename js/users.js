@@ -1,8 +1,12 @@
-function checkPassword(form) {
+function checkPassword(form) {_self
     let password = form.password.value;
     let newPassword = form.newPassword.value;
 
-    if (password != newPassword){
+    if (password === "" && newPassword === "" && form.action.includes("/controller/User_profile.php") )
+        return true;
+
+
+    if (password !== newPassword){
         alert("Las contraseñas no coinciden");
         return false;
     }

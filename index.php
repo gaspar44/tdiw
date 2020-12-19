@@ -51,6 +51,9 @@ elseif ($_SERVER["REQUEST_METHOD"] == "POST") {
             case 'updateShoppingCar':
                 require_once __DIR__ . '/controller/Shopping_Updater.php';
                 break;
+            case 'editProfile':
+                require_once __DIR__ . '/controller/User_profile.php';
+                break;
             default:
                 break;
         }

@@ -13,17 +13,17 @@
 <section class="form-register">
     <h4>Datos actuales</h4>
 
-    <form target="_blank" enctype="multipart/form-data" action="/controller/Register_User.php" onsubmit="return checkPassword(this)" method="post">
+    <form target="_blank" enctype="multipart/form-data" action="/controller/User_profile.php" onsubmit="return checkPassword(this)" method="post">
         Nombre:
         <input class="controls" value="<?php echo $_SESSION["realName"] ;?>"type="text" name="nombres" id="nombres" pattern="[a-zA-Z\u00C0-\u00FF]+(\s[a-zA-Z\u00C0-\u00FF]+)?$" required>
         <br>
 
         Password:
-        <input class="controls" type="password" name="password" id="password" pattern="(?=^.{6,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required >
+        <input class="controls" type="password" name="password" id="password" pattern="(?=^.{6,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" >
         <br>
 
         New Password:
-        <input class="controls" type="password" name="newPassword" id="newPassword" pattern="(?=^.{6,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"  required >
+        <input class="controls" type="password" name="newPassword" id="newPassword" pattern="(?=^.{6,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"  >
         <br>
 
         Dirección:
@@ -42,13 +42,13 @@
         <input class="controls" type="file" name="profile_image">
         <br>
 
-        <?php if (isset($_SESSION["routeToPicture"]) ) : ?>
-
-        <?php endif; ?>
-
-
         <input class="botons" type="submit" value="Cambiar datos">
     </form>
+
+    <?php if (isset($_SESSION["routeToPicture"]) ) : ?>
+        <div id="profilePicture"></div>
+    <?php endif; ?>
+
 </section>
 </body>
 </html>
