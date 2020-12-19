@@ -65,7 +65,6 @@ class FilesHelper {
         if (empty($oldPicture) )
             return;
 
-        print_r($this->getHome() . $oldPicture);
         if (file_exists($this->getHome() . $oldPicture)) {
             unlink($this->getHome() . $oldPicture);
         }
