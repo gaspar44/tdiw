@@ -12,8 +12,14 @@
 <body>
 <section class="form-register">
     <h4>Datos actuales</h4>
+    <?php if (isset($_SESSION["routeToPicture"]) ) : ?>
+        <div id="profilePicture">
+            <h5>Imagen actual</h5>
+            <img src="<?php echo $_SESSION["routeToPicture"] ?>">
+        </div>
+    <?php endif; ?>
 
-    <form target="_blank" enctype="multipart/form-data" action="/controller/User_profile.php" onsubmit="return checkPassword(this)" method="post">
+    <form target="_blank" enctype="multipart/form-data" action="/controller/User_Profile.php" onsubmit="return checkPassword(this)" method="post">
         Nombre:
         <input class="controls" value="<?php echo $_SESSION["realName"] ;?>"type="text" name="nombres" id="nombres" pattern="[a-zA-Z\u00C0-\u00FF]+(\s[a-zA-Z\u00C0-\u00FF]+)?$" required>
         <br>
@@ -44,11 +50,6 @@
 
         <input class="botons" type="submit" value="Cambiar datos">
     </form>
-
-    <?php if (isset($_SESSION["routeToPicture"]) ) : ?>
-        <div id="profilePicture"></div>
-    <?php endif; ?>
-
 </section>
 </body>
 </html>

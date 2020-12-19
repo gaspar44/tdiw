@@ -12,8 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 }
 
 elseif ($_SERVER["REQUEST_METHOD"] == "POST") {
-
-    print_r($_SESSION);
+    require_once __DIR__ . '/User_Profile_Updater.php';
 }
 
 else {

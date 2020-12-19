@@ -1,8 +1,8 @@
-function checkPassword(form) {_self
+function checkPassword(form) {
     let password = form.password.value;
     let newPassword = form.newPassword.value;
 
-    if (password === "" && newPassword === "" && form.action.includes("/controller/User_profile.php") )
+    if (password === "" && newPassword === "" && form.action.includes("/controller/User_Profile.php") )
         return true;
 
 
@@ -14,7 +14,7 @@ function checkPassword(form) {_self
 }
 
 function getUrl() {
-    let  ServerUrl = window.location
+    let ServerUrl = window.location
     return ServerUrl .protocol + "//" + ServerUrl.host + "/"  +ServerUrl.pathname.split('/')[1];
 }
 

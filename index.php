@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
             require_once __DIR__ . '/controller/Shopping_Finisher.php';
             break;
         case 'editProfile':
-            require_once __DIR__ . '/controller/User_profile.php';
+            require_once __DIR__ . '/controller/User_Profile.php';
             break;
         default :
             break;
@@ -52,7 +52,7 @@ elseif ($_SERVER["REQUEST_METHOD"] == "POST") {
                 require_once __DIR__ . '/controller/Shopping_Updater.php';
                 break;
             case 'editProfile':
-                require_once __DIR__ . '/controller/User_profile.php';
+                require_once __DIR__ . '/controller/User_Profile.php';
                 break;
             default:
                 break;
