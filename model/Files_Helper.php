@@ -3,7 +3,7 @@ require_once __DIR__ . '/../model/Connection.php';
 class FilesHelper {
     private $absoluteRoute;
     private $userID;
-    private $newRoute;
+    private $newPictureName;
     private $conn;
     private $userImagesHome;
 
@@ -13,7 +13,7 @@ class FilesHelper {
         $this->absoluteRoute = $this->getHome() . $this->userImagesHome;
         $this->userID = $userID;
         $this->conn = new Connection();
-        $this->newRoute = null;
+        $this->newPictureName = null;
     }
 
     private function getHome() {
@@ -23,8 +23,8 @@ class FilesHelper {
 
     public function saveFileToDiskAndDatabase($fileOriginalName, $fileDestination)
     {
-        $this->newRoute = $this->userID . "_" . $fileDestination;
-        $ok = $this->saveFileToDisk($fileOriginalName,$this->absoluteRoute . $this->newRoute);
+        $this->newPictureName = $this->userID . "_" . $fileDestination;
+        $ok = $this->saveFileToDisk($fileOriginalName,$this->absoluteRoute . $this->newPictureName);
 
         if (!$ok)
             return false;
@@ -38,6 +38,7 @@ class FilesHelper {
     }
 
     private function saveFileToDisk($fileOriginalName, $fileDestination) {
+        $this->deleteOldPicture();
         $ok = move_uploaded_file($fileOriginalName,$fileDestination);
 
         if (!$ok)
@@ -49,13 +50,29 @@ class FilesHelper {
     private function saveFileToDatabase() {
         $sqlQuery = 'UPDATE usuario SET Picture =:newPicture WHERE id=:userID';
         $parameters = [
-            'newPicture' => $this->userImagesHome .  $this->newRoute,
+            'newPicture' => $this->userImagesHome .  $this->newPictureName,
             'userID' => $this->userID
         ];
 
         $this->conn->doQuery($sqlQuery,$parameters);
 
         return true;
+    }
+
+    private function deleteOldPicture()
+    {
+        $oldPicture = $_SESSION["routeToPicture"];
+        if (empty($oldPicture) )
+            return;
+
+        print_r($this->getHome() . $oldPicture);
+        if (file_exists($this->getHome() . $oldPicture)) {
+            unlink($this->getHome() . $oldPicture);
+        }
+    }
+
+    public function getNewPictureName() {
+        return $this->userImagesHome .  $this->newPictureName;
     }
 }
 
