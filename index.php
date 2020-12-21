@@ -38,6 +38,9 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
         case 'editProfile':
             require_once __DIR__ . '/controller/User_Profile.php';
             break;
+        case 'buyHistory':
+            require_once __DIR__ . '/controller/User_Buy_History.php';
+            break;
         default :
             break;
     }

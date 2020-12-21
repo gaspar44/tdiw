@@ -13,9 +13,15 @@
                 <li>
                     <a href="/index.php?async=false&action=buyCar">Comprar</a>
                 </li>
+
                 <li>
                     <a href="/index.php?async=false&action=editProfile">Editar perfil</a>
                 </li>
+
+                <li>
+                    <a href="/index.php?async=false&action=buyHistory">Histórico</a>
+                </li>
+
                 <li>
                     <a href="/index.php?async=false&action=logout">Desconectarse</a>
                 </li>
