@@ -21,7 +21,7 @@
     <?php foreach ($actualBuyingCar->getProducts() as $product) : ?>
     <tr>
         <td> <?php echo $product->getName()?></td>
-        <td> <?php echo $product->getPrice() /$product->getAmount() ?></td>
+        <td> <?php echo $product->getPrice() / $product->getAmount() ?></td>
         <td> <?php echo $product->getAmount() ?> </td>
     </tr>
     <?php endforeach; ?>
