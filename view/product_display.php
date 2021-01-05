@@ -11,6 +11,10 @@
 <body>
 <div>
     <div class="button_detail_add_cart" data-value="async=true&action=updateShoppingCar" data-httpMethod=POST><input type='button' value='Agregar al carrito'></div>
+    <br>
+    Cantidad a comprar:
+    <br>
+    <textarea id="amount">1</textarea>
     <div class="product">
         <div class="drinkImage">
             <img src=<?php echo $productToDisplay->getRouteToPicture() ?>>

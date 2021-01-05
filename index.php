@@ -47,6 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 }
 
 elseif ($_SERVER["REQUEST_METHOD"] == "POST") {
+
     $http_post_action = $_POST["action"] ?? null;
 
     if (!is_null($http_post_action)) {

@@ -1,6 +1,6 @@
 <div class="topNav">
     <div class="logo">
-        <img src="/view/resources/pictures/logo.png"></img>
+        <img src="/view/resources/pictures/logo.png"/>
     </div>
 
     <div id="userSesion" class="userSession">
@@ -24,6 +24,16 @@
 
                 <li>
                     <a href="/index.php?async=false&action=logout">Desconectarse</a>
+                </li>
+            </ul>
+            carrito
+            <ul>
+                <li>
+                    Total: <?php echo $shoppingCar->getTotal(); ?>
+                </li>
+
+                <li>
+                    Productos: <?php echo $shoppingCar->getNumberOfProucts(); ?>
                 </li>
             </ul>
 

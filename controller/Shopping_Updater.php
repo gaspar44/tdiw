@@ -8,10 +8,13 @@ if (!isset($_SESSION["shoppingCar"])) {
     return;
 }
 
+$amountOfProductsToAdd = $_POST["amount"] ?? null;
+
+
 $actualBuyingCar = unserialize($_SESSION["shoppingCar"]);
 $productToAddToCar = unserialize($_SESSION["actualProduct"]);
 
-$actualBuyingCar->addProduct($productToAddToCar);
+$actualBuyingCar->addProduct($productToAddToCar,$amountOfProductsToAdd);
 
 $_SESSION["shoppingCar"] = serialize($actualBuyingCar);
 

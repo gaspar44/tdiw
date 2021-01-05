@@ -12,13 +12,15 @@ class ShoppingCar {
         $this->numberOfProduts = 0;
     }
 
-    public function addProduct($product) {
-        array_push($this->products,$product);
-        $this->total = $this->total + $product->getPrice();
-        $this->numberOfProduts++;
+    public function addProduct($product,$amount) {
+        for ($i = 0; $i < $amount;$i++) {
+            array_push($this->products,$product);
+            $this->total = $this->total + $product->getPrice();
+            $this->numberOfProduts++;
+        }
     }
 
-    public function getTotal(): int
+    public function getTotal()
     {
         return floatval($this->total);
     }

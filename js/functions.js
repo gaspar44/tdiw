@@ -24,6 +24,9 @@ $(document).ready(function () {
 
     $(document).one('click',".button_detail_add_cart",function (e) {
         let dataToUse = $(this).data('value');
+        let cantity = document.getElementById("amount").value;
+        dataToUse = dataToUse + "&amount=" + cantity;
+
         console.log('Hi, Renzo!')
         $.ajax({
             url: "index.php",
