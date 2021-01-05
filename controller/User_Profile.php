@@ -1,10 +1,12 @@
 <?php
+require_once __DIR__ . '/../model/Http_codes.php';
+
 if(!isset($_SESSION)) {
     session_start();
 }
 
 if (!isset($_SESSION["shoppingCar"])) {
-    http_response_code(401);
+    http_response_code(HTTP_UNAUTHORIZED_CODE);
     die();
 }
 
@@ -18,7 +20,7 @@ elseif ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 else {
-    http_response_code(405);
+    http_response_code(HTTP_METHOD_NOT_ALLOWED_CODE);
     die();
 }
 

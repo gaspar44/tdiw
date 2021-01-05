@@ -1,17 +1,17 @@
 <?php
 require_once __DIR__ . '/../model/Product.php';
 require_once __DIR__ . '/../model/Shopping_Car.php';
-
+require_once __DIR__ . '/../model/Http_codes.php';
 
 if (!isset($_SESSION["shoppingCar"])) {
-    http_response_code(401);
+    http_response_code(HTTP_UNAUTHORIZED_CODE);
     die();
 }
 
 $amountOfProductsToAdd = $_POST["amount"] ?? null;
 
 if (! filter_var($amountOfProductsToAdd,FILTER_VALIDATE_INT) || $amountOfProductsToAdd <= 0) {
-    http_response_code(400);
+    http_response_code(HTTP_BAD_REQUEST_CODE);
     die();
 }
 

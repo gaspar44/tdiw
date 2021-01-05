@@ -1,6 +1,7 @@
 <?php
 require_once __DIR__. "/../model/User_Factory.php";
 require_once __DIR__ . "/../model/Message.php";
+require_once __DIR__ . '/../model/Http_codes.php';
 
 $userName = $_POST["mail"] ?? null;
 $address = $_POST["direccion"] ?? null;
@@ -11,7 +12,7 @@ $password = $_POST["password"] ?? null;
 $repitPassword = $_POST["newPassword"] ?? null;
 
 if (is_null($userName) || is_null($address) || is_null($poblation) || is_null($postalCode) || is_null($userRealNames) || is_null($password) || is_null($repitPassword)) {
-    http_response_code(400);
+    http_response_code(HTTP_BAD_REQUEST_CODE);
     die();
 }
 

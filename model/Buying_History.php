@@ -39,7 +39,6 @@ class BuyingHistory {
 
             if (!empty($stmt)) {
                 array_push($this->linea_comandaList,$stmt);
-                //$this->linea_comandaList = $stmt;
             }
         }
 

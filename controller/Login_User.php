@@ -3,6 +3,7 @@
 require_once __DIR__ . '/../model/User_Factory.php';
 require_once  __DIR__ . '/../model/Message.php';
 require_once __DIR__ . '/../model/Shopping_Car.php';
+require_once __DIR__ . '/../model/Http_codes.php';
 
 function sessionStart($user) {
     session_start();
@@ -26,7 +27,7 @@ function sessionStart($user) {
 }
 
 if ($_SERVER["REQUEST_METHOD"] != "POST") {
-    http_response_code(405);
+    http_response_code(HTTP_METHOD_NOT_ALLOWED_CODE);
     exit;
 }
 
