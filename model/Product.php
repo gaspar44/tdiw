@@ -8,6 +8,7 @@ class Product {
     private $categoryName;
     private $productID;
     private $categoryID;
+    private $amountOfProduct;
 
     public function __construct($name,$price,$description,$routeToPicture,$categoryName,$productID,$categoryID)
     {
@@ -18,6 +19,7 @@ class Product {
         $this->categoryName = $categoryName;
         $this->productID = $productID;
         $this->categoryID = $categoryID;
+        $this->amountOfProduct = 1;
     }
 
     public function getName()
@@ -27,7 +29,7 @@ class Product {
 
     public function getPrice()
     {
-        return $this->price;
+        return $this->price * $this->amountOfProduct;
     }
 
     public function getDescription()
@@ -47,6 +49,14 @@ class Product {
 
     public function getCategoryID() {
         return $this->categoryID;
+    }
+
+    public function setAmount($newAmount) {
+        $this->amountOfProduct = $newAmount;
+    }
+
+    public function getAmount(): int {
+        return $this->amountOfProduct;
     }
 
 

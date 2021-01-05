@@ -53,15 +53,16 @@ class OrderUpdater {
         $products = $this->shoppingCar->getProducts();
 
         $sqlQuery = "INSERT INTO linea_comanda (comanda_id,producto_id,nombre_producto,precio_unidad,precio_total,cantidad) 
-VALUES (:commandID,:productID,:productName,:productPrice,:productTotalPrice,1)";
+VALUES (:commandID,:productID,:productName,:productPrice,:productTotalPrice,:productAmount)";
 
         foreach ($products as $product) {
             $parameters = [
               'commandID' => $this->commandID,
               'productID' => $product->getID(),
                 'productName' => $product->getName(),
-                'productPrice' => $product->getPrice(),
-                'productTotalPrice' => $product->getPrice()
+                'productPrice' => $product->getPrice() / $product->getAmount(),
+                'productTotalPrice' => $product->getPrice(),
+                'productAmount' => $product->getAmount()
             ];
 
             $this->connectionToDatabase->doQuery($sqlQuery,$parameters);
